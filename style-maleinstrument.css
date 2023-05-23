@@ -1,0 +1,183 @@
+*{/* Setter margin og padding som standard verdi for hele siden */
+    margin: 0;/* Setter margin på alt innhold som standard til 0 */
+    padding: 0;/* Setter padding (avstand fra innhold til border) til 0 som standard for siden */
+}
+body {/* Styling av body */
+    background-color: darkslategray;/* Setter på bakgrunn på body området */
+}
+a {
+    color: inherit;  /* Setter fargen til å bli den samme som det "parent" diven har som farge */
+    font-style: inherit;  /* Setter stylingen på teksten til det samme som "parent" diven har */
+    font-family: inherit;  /* Setter tekst typen til å være det samme som parenten har  */
+    text-decoration: none;/* Setter text dekorasjonen til none for å få vekk dekorasjon som kommer med som standard når man lager en liste */
+}
+.area1 {/* Styling og posisjonering av overskrift */
+    background-color: rgb(39, 89, 89);/* Setter på bakgrunnsfarge */
+        display: flex;/* Setter containeren til å være en flexbox for enklere posisjonering */
+        justify-content: center;/* Setter horisontal plassering til senter */
+        font-size: 40px;/* Setter størrelse på innhold */
+        grid-area: area1;/* Setter plassering i forhold til grid (dette er copy pastet til flere sider, grid area er ikke brukt her) */
+        min-height: 50px;/* Setter minimumshøyde til 50pixler */
+        border: solid 2px black;/* Setter border rundt containeren */
+        box-shadow: 5px 5px 5px 5px rgba(0, 0, 0, 0.3);/* Skyggelegger rundt containeren */
+}
+
+.bryterpanel{/* Oppsett av bryterpanel. posisjon settes til sticky for å få bryterpanelet til å følge etter når siden scrolles nedover og oppover */
+    margin: 0 25px 0 0;/* Setter margin på høyre side av containeren */
+    position: sticky;/* Setter posisjoneringen til sticky slik at bryterpanelet skal følge med når det scrolles nedover  */
+    display:flex ;/* lager bryterpanelet som en flexbox for enklere posisjonering */
+    flex-direction: row;/* Setter flex direction til "row" dette for at bryterpanelet skal organiseres horisontalt framfor vertikalt */
+    justify-content: end;/* Setter posisjoneringen på bryterpanelet på enden av containeren */
+    top:0;/* Setter "top" til 0 som snakker med "sticky" posisjoneringen og gjør at sticky vil følge top posisjonen. Dette gjør at sticky aktiveres når top=0 */
+}
+
+.button1 { /* Styling av alle knapper på bryterpanelet (satt som button1 for å kunne bruke samme styling på forskjellige sider hvor den er definert som button1 */
+    margin-left: 20px;/* Setter margin fra brytere i bryterpanel på venstre side */
+    display: flex;/* Lager bryterene som flexboxer for å kunne enkelt posisjonere knappene */
+        padding: 2px;/* Setter på 2pixler for padding fra skrift til border */
+        width: 150px;/* Setter bredde på knappene */
+        justify-content: center;/* posisjonerer knappene horisontalt til senter */
+        border: solid 2px transparent;/* Setter usynlig border på knappene */
+        border-radius: 9px;/* avrunder kantene på knappene */
+        background-color: black;/* Setter bakgrunnsfargen til svart */
+        color: white;/* Setter tekst farge til hvit */
+        cursor: pointer;/* lager hover effekt på bryterene for når musen er over */
+        font-size: 14px;/* Setter størrelse på skriften */
+        transition: 1s;/* Setter tid for hvor lang tid det tar å gjenomføre hover effekten */
+}
+/* Setter hover effekt på alle knapper for å få knappene til å scales opp når de hovres*/
+.button1:hover{
+    transform: scale(1.2);/* Skalerer knappene større når de hovres */
+    border: solid 2px darkblue;/* Setter på blå border når knappene hovres */
+}
+
+.banner {/* Styling og posisjonering av banneren */
+    height: 600px;/* Setter høyden til fixed høyde på 600pixler */
+    background: linear-gradient(rgba(0, 0, 0, 0.58), rgba(0, 0, 0, 0.58)), url(images/Multimeter/multimeter-m-pinner.PNG) no-repeat center center fixed;/* Setter på bakgrunn med svak svart farge over slik at tekst skal bli mer synlig. Setter også bilde til å ikke kopieres flere ganger om det overstiger container størrelsen. Setter posisjon til fixed i senter */
+    background-size: auto;/* Setter bakgrunnstørrelsen til å automatisk dekke containeren */
+    -webkit-background-size: cover;/* funksjon for å få "cover" til å fungere i flest mulig nettlesere */
+    -moz-background-size: cover;/* funksjon for å få "cover" til å fungere i flest mulig nettlesere */
+    -o-background-size: cover;/* funksjon for å få "cover" til å fungere i flest mulig nettlesere */
+    background-repeat: no-repeat;/* funksjon for å få "cover" til å fungere i flest mulig nettlesere */
+    display: grid;/* Lager containeren som en grid */
+    flex-wrap: wrap;/* Setter på wrap funksjon for at innhold som skulle ha oversteget containeren vil begynne på en ny linje */
+    grid-template-areas:/* Setter opp områder i grid containeren */
+        ". tekst-banner . ."/* Setter opp områder i grid containeren */
+    ;
+}
+
+.tekst-banner {/* Styling og posisjonering av teksten i containeren */
+    display: flex;/* Lager containeren til en flexbox for enklere posisjonering */
+    justify-content: center;/* Setter posisjoneringen til senter horisontalt */
+    align-items: center;/* Setter posisjoneringen til senter vertikalt */
+    font-size: 30px;/* Setter størrelse på teksten */
+    max-width: 800px;/* Setter en maks bredde på skrift containeren */
+    line-height: 1.4;/* Setter linjeavstand på innholdet */
+    color: white;/* Setter fargen til rød (midlertidig under testing) */
+    grid-area: tekst-banner;/* Setter på plasseringen av teksten i griden */
+}
+
+.container-3dprint{/* Setter opp container for 4 bilder av 3d printing prosessen */
+    align-items: start;/*  Setter bildene til å starte fra starten av containeren vertikalt*/
+    display: flex;/* Setter containeren til en flexbox */
+    flex-wrap: wrap;/* Setter på wrap funksjon for at innhold som skulle ha oversteget containeren vil begynne på en ny linje */
+    justify-content: center;/* Setter posisjoneringen til senter horisontalt */
+    flex-direction: row;/* Setter retning på plasseringen av innholdet til å sorteres i rekker */
+    width: 100%;/* Setter bredden på containeren til å være 100% av størrelsen på siden */
+}
+.seksjon1{/* Setter opp seksjonen bildene skal plasseres i */
+    display: flex;/* Lager containeren til en flexbox */
+    justify-content: center;/* Setter containeren sente */
+    flex-direction: column;/* Setter retning på plasseringen av innholdet til å sorteres i columns (nedover) */
+    width: 430px;/* Setter på bredde på seksjonen */
+}
+
+.bildeseksjon{/* Setter opp en bildeseksjon for 4 bilder */
+    margin: 15px 15px 0 15px;/* Setter på margin på topp, høyre side og venstre side for å få avstand fra andre elementer */
+    height: 400px;/* Setter på en fixed høyde på 400pixler */
+    display: flex;/* Setter bilde som en flexbox for enklere posisjonering */
+    justify-content: center;/* Setter plasseringen til senter horisontalt */
+    align-items: center;/* Setter plasseringen til senter vertikalt */
+    border-radius: 5px;/* Avrunder kanter */
+}
+#bilde1{/* Styling av bilde */
+    border-top-right-radius: 30px;/* Avrunder top høyre kant */
+    border-top-left-radius: 30px;/* Avrunder top venstre kant */
+    height: 100%;/* Setter høyden til å være 100% av containeren */
+    width: 100%;/* Setter bredden til å være 100% av containeren */
+    max-height: 500px;/* Setter på en maks høyde på bilde */
+}
+.tekst1{/* lager container for tekst innholdet */
+    display: flex;/* Lager denne som en flexbox */
+    align-items: center;/* Sentrerer tekst containeren til senter vertikalt */
+    justify-content: center;/* Sentrerer containeren horisontalt */
+    height: 100px;/* Setter høyden til 100% av bildeseksjon parent containeren */
+    background-color: rgb(19, 44, 44);/* Setter på bakgrunnsfarge på tekst området */
+    color: white;/* Setter tekst fargen til hvit */
+    font-size: 17px;/* Setter størrelse på teksten */
+    padding: 15px 15px 15px 15px;/* Setter avstand fra tekst til border */
+    margin: 0 15px 0 15px;/* Setter avstand fra containeren til høyre og venstre side*/
+
+}
+.container1{ /* Lager container for bildeområdet */
+     display: flex;/* Lager containeren som en flexbox */
+    justify-content: center;/* Sentrerer containeren til senter horisontalt */
+    margin: 25px 0 25px 0;/* Setter margin på topp og bunn til 25pixler */
+}
+
+.ov1{/* Styling av overskrift over videoer */
+    display: flex;/* Lager overskriften i en flexbox for enklere plassering */
+    justify-content: center;/* Sentrerer teksten i flexboxen */
+    font-size: 70px;/* Setter størrelse på overskriften */
+    grid-area: ov1;/* Setter området overskriften skal plasseres */
+}
+.video1{/* Styling av video */
+    margin-top: 150px;/*Setter avstand fra topp  */
+
+}
+.video2{/* Styling av video 2 */
+    margin-top: 100px;/* Setter avstand fra videoen over */
+    margin-bottom: 150px;/* Setter avstand fra bunnen av siden */
+
+}
+.area5 {    /* Avskille fra side 1 til side 2*/
+    margin: 5% 5% 5% 5%;/* Setter avstand rundt linjen */
+    background-color: black;/* Lager linjen som svart */
+    min-height: 0.1px;/* Setter høyde på linjen */
+    max-height: 14px;/* Setter en maks høyde på linjen */
+}
+/*---------------------------------------------DETALJER AVSLUTTENDE LINJE-------------------------------------------------*/
+.detaljer-container {/* Setter opp container for detaljelinjen */
+    display: grid;/* Setter detalje-linjen som en grid type for å enkelt kunne plassere områdene i griden */
+    min-height: 70px;/* Setter opp minimumshøyde på containeren */
+    background-color: rgb(114, 144, 144);/* Setter bakgrunnsfarge på containeren */
+    grid-template-areas:/* Setter opp områdene for griden */
+        "d-1 d-2 d-3 d-4"/* Setter opp områdene for griden */
+        "d-1 d-2 d-3 d-4"/* Setter opp områdene for griden */
+        "d-1 d-2 d-3 d-4"/* Setter opp områdene for griden */
+        "d-1 d-2 d-3 d-4"/* Setter opp områdene for griden */
+    ;
+}
+
+.d-1 {/* Setter opp området for første sted hvor kontaktinformasjon setter */
+    display: flex;/* Setter containeren opp som en flexbox */
+    grid-area: d-1;/* Setter området på containeren */
+    align-items: end;/* Setter posisjonen til innholdet vetikalt til å være på enden */
+    justify-content: start;/* Setter posisjonen på innholdet til å være på starten horisontalt */
+}
+
+.d-2 {/* Setter opp tomt området for å fylle mellomrommet imellom d1 og d4. Dette kunne også skreves som "." i main containeren.*/
+    grid-area: d-2;/*  Setter området på d-2*/
+}
+
+.d-3 {/* Setter opp tomt området for å fylle mellomrommet imellom d1 og d4. Dette kunne også skreves som "." i main containeren.*/
+    grid-area: d-3;/* Setter området på d-3 */
+}
+
+.d-4 {/* Setter opp området for navn som har laget nettsiden */
+    margin-right: 15px;/* Setter på en margin på 15 pixler på høre side av containeren */
+    display: flex;/* Setter containern som en flexbox for enklere posisjonering */
+    grid-area: d-4;/* Setter posisjonering i forhold til detaljecontaineren */
+    align-items: end;/* Setter posisjoneringen til slutten av containeren */
+    justify-content: end;/* Setter posisjoneringen til slutten av containernen */
+}

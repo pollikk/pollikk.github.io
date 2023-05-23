@@ -1,0 +1,500 @@
+/* setter standarverdi på margin og padding */
+* {
+    margin: 0;/* Setter standard margin for siden til å være 0 Dette er avstanden fra borderen rundt og ut*/
+    padding: 0;/* Setter standard padding for siden til å være 0 (dette er hvor langt det er fra innholdet til borderen rundt */
+}
+/* Setter bakgrunnsfarge på innholdet i "body" */
+body{
+        background-color: darkslategray;/* Setter bakgrunnsfargen til darkslategray */
+}
+/* Setter standarverdier på knapper i bryterpanel */
+a {
+    color: inherit;  /* Setter fargen til å bli den samme som det "parent" diven har som farge */
+    font-style: inherit;  /* Setter stylingen på teksten til det samme som "parent" diven har */
+    font-family: inherit;  /* Setter tekst typen til å være det samme som parenten har  */
+    text-decoration: none;/* Setter text dekorasjonen til none for å få vekk dekorasjon som kommer med som standard når man lager en liste */
+}
+/* Oppsett av bryterpanel. posisjon settes til sticky for å få bryterpanelet til å følge etter når siden scrolles nedover og oppover */
+.bryterpanel {
+    margin: 0 25px 0 0;/* Setter margin på høyre side av containeren */
+    position: sticky;/* Setter posisjoneringen til sticky slik at bryterpanelet skal følge med når det scrolles nedover  */
+    display: flex;/* lager bryterpanelet som en flexbox for enklere posisjonering */
+    flex-direction: row;/* Setter flex direction til "row" dette for at bryterpanelet skal organiseres horisontalt framfor vertikalt */
+    justify-content: end;/* Setter posisjoneringen på bryterpanelet på enden av containeren */
+    top: 0;/* Setter "top" til 0 som snakker med "sticky" posisjoneringen og gjør at sticky vil følge top posisjonen. Dette gjør at sticky aktiveres når top=0 */
+}
+/* Styling av alle knapper på bryterpanelet (satt som button1 for å kunne bruke samme styling på forskjellige sider hvor den er definert som button1 */
+.button1 {
+    margin-left: 20px;/* Setter margin på venstre side av containeren */
+    display: flex;/* Lager containeren som en flexbox for enklere posisjonering */
+    padding: 2px;/* Setter avstand fra skriften til borderen rundt */
+    width: 150px;/* Setter bredde på knappene */
+    justify-content: center;/* Setter posisjoneringen til senter horisontalt */
+    border: solid 2px transparent;/* Setter på en usynlig border  */
+    border-radius: 9px;/* Avrunder kantene på knappen */
+    background-color: black;/* Setter bakgrunnsfarge  */
+    color: white;/* Setter skrift farge */
+    cursor: pointer;/* Setter hover effekt på når musen er over knappen */
+    font-size: 14px;/* Setter font størrelse på skriften */
+    transition: 1s;/* Setter tid på hvor lang tid det skal ta å gjenomføre hover effekten */
+}
+/* Setter hover effekt på alle knapper for å få knappene til å scales opp når de hovres*/
+.button1:hover {
+    transform: scale(1.2);/* Setter på en skalering på knappen når den hovres */
+    border: solid 2px darkblue;/* Setter på en blå border rundt knappen  */
+}
+    /* OVERSKIRFT */
+    .area1 {
+    background-color: rgb(39, 89, 89);/* Setter på bakgrunnsfarge på overskriften */
+        display: flex;/* Setter opp containeren som en flexbox  */
+        justify-content: center;/* Setter posisjoneringen av området til senter horisontalt */
+        font-size: 40px;/* Setter størrelse på skriften i containeren */
+        grid-area: area1;/* Setter posisjoneringen til containeren i griden */
+        min-height: 50px;/* Setter minimumshøyde */
+        border: solid 2px black;/* Setter en svart border rundt containeren */
+        box-shadow: 5px 5px 5px 5px rgba(0, 0, 0, 0.3);/* Skyggelegger rundt containeren */
+        }
+/*                                                  BANNER */
+/* Styling av banneren samt sette på bakgrunnsbilde */
+.banner1 {
+    margin: 15px 0x 0 0;/* Setter på margin på toppen av banneren */
+    display: grid;/* Lager banneren som en grid for å kunne posisjonere brytere/tekst */
+        grid-template-areas:/* Setter opp området for hvor bryterene skal stå */
+            ". banner-tekst . ."
+        ;    height: 600px;/* Setter en fixed høyde på banneren */
+            animation-name: example;/* Setter navn på animasjonen */
+            animation-duration: 30s;/* Setter tid på hvor lang tid den fulstendige animasjonen skal ta */
+            animation-iteration-count: infinite;/* Setter animasjonen til å fortsette uendelig */
+            ;
+        }
+        /* Oppsett av animasjonen brukt til banneren. Her forandres bilde utifra hvor mange prosent animasjonen har komt hvor 30sek er 100%*/
+@keyframes example {/* Setter opp første bilde på 0-25% av tiden det har tatt */
+0% {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0.75)),url(images/gruppebilder/lodding.PNG);/* Setter opp første bilde med en svak svart farge over slik at tekst skal bli mer synlig */
+    background-position-y: center;/* Sentrerer bakgrunnen på y aksen */
+    background-size: auto;/* Setter bakgrunns størrelsen til automatisk slika at den følger størrelsen på containeren */
+    -webkit-background-size: cover;/* funksjon for å få "cover" til å fungere i flest mulig nettlesere */
+    -moz-background-size: cover;/* funksjon for å få "cover" til å fungere i flest mulig nettlesere */
+    -o-background-size: cover;/* funksjon for å få "cover" til å fungere i flest mulig nettlesere */
+    background-repeat: no-repeat;/* funksjon for å få "cover" til å fungere i flest mulig nettlesere */
+}
+25% {
+    background-image:linear-gradient(rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0.75)), url(images/gruppebilder/arbeid2.PNG);/* Setter opp første bilde med en svak svart farge over slik at tekst skal bli mer synlig */
+    background-size: auto;/* Setter bakgrunns størrelsen til automatisk slika at den følger størrelsen på containeren */
+    -webkit-background-size: cover;/* funksjon for å få "cover" til å fungere i flest mulig nettlesere */
+    -moz-background-size: cover;/* funksjon for å få "cover" til å fungere i flest mulig nettlesere */
+    -o-background-size: cover;/* funksjon for å få "cover" til å fungere i flest mulig nettlesere */
+    background-repeat: no-repeat;/* funksjon for å få "cover" til å fungere i flest mulig nettlesere */
+}
+50% {
+    background-image:linear-gradient(rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0.75)), url(images/gruppebilder/arbeid3.PNG);/* Setter opp første bilde med en svak svart farge over slik at tekst skal bli mer synlig */
+    background-size: auto;/* Setter bakgrunns størrelsen til automatisk slika at den følger størrelsen på containeren */
+    -webkit-background-size: cover;/* funksjon for å få "cover" til å fungere i flest mulig nettlesere */
+    -moz-background-size: cover;/* funksjon for å få "cover" til å fungere i flest mulig nettlesere */
+    -o-background-size: cover;/* funksjon for å få "cover" til å fungere i flest mulig nettlesere */
+    background-repeat: no-repeat;/* funksjon for å få "cover" til å fungere i flest mulig nettlesere */
+}
+        /* Trenger flere bilder */
+75% {
+    background-image:linear-gradient(rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0.75)), url(images/gruppebilder/arbeid1.PNG);/* Setter opp første bilde med en svak svart farge over slik at tekst skal bli mer synlig */
+    background-size: auto;/* Setter bakgrunns størrelsen til automatisk slika at den følger størrelsen på containeren */
+    -webkit-background-size: cover;/* funksjon for å få "cover" til å fungere i flest mulig nettlesere */
+    -moz-background-size: cover;/* funksjon for å få "cover" til å fungere i flest mulig nettlesere */
+    -o-background-size: cover;/* funksjon for å få "cover" til å fungere i flest mulig nettlesere */
+    background-repeat: no-repeat;/* funksjon for å få "cover" til å fungere i flest mulig nettlesere */
+}
+100% {
+    background-image:linear-gradient(rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0.75)), url(images/gruppebilder/arbeid4.PNG);/* Setter opp første bilde med en svak svart farge over slik atekst  skal bli mer synlig */
+    background-size: auto;/* Setter bakgrunns størrelsen til automatisk slika at den følger størrelsen på containeren */
+    -webkit-background-size: cover;/* funksjon for å få "cover" til å fungere i flest mulig nettlesere */
+    -moz-background-size: cover;/* funksjon for å få "cover" til å fungere i flest mulig nettlesere */
+    -o-background-size: cover;/* funksjon for å få "cover" til å fungere i flest mulig nettlesere */
+    background-repeat: no-repeat;/* funksjon for å få "cover" til å fungere i flest mulig nettlesere */
+}
+ }
+ /* Styling og posisjonering av tekst i banner */
+.banner-tekst{
+    display: flex;/* lager banneren som en flexbox for enklere posisjonering */
+    justify-content: center;/* Setter posisjoneringen til senter horisontalt */
+    align-items: center;/* Setter posisjoneringen til senter vertikalt */
+    font-size: 25px;/* Setter på størrelse på skriften i banner området */
+    max-width: 800px;/* Setter på maks bredde på skriftområdet */
+    line-height: 1.4;/* Setter på linje høyde */
+    color: white;/*Setter skrift farge som hvit  */
+    grid-area: banner-tekst;/* Setter plasseringen i griden */
+}
+/*                                                        MELLOMSIDE- side2 */
+/* posisjonering av container, satt som grid type for å plassere innhold utifra grid plassering */
+.side2-container{
+    margin: 150px 250px 150px 250px;/* Setter margin i pixler fra hver side sett fra top,høyre,bunn og venstre */
+    box-shadow: 0 0 15px 15px rgba(0, 0, 0, 0.3);/* Setter på skygge på containeren */
+    background-color: white;/* Setter på bakgrunnsfarge  */
+    display: grid;/* Lager containeren som en grid  */
+    border-radius: 15px;/* Avrunder kantene på containeren */
+    grid-template-areas:/* Setter området for hvor innhold i containeren skal stå */
+    "tekst-side2 tekst-side2 bilde-side2 bilde-side2"
+    ;
+    height: fit-content;/* Setter høyden til å passe til innholdet */
+}
+.tekst-side2{/* tekst på side 2 styling og posisjonering */
+    font-size: 25px;/* Setter på størrelse på skriften */
+    padding: 100px;/* Setter padding fra skriften til borderen */
+    clear: right;/* Klarerer høyre side for teksten slik at teksten ikke vil gå over bilde som floater på høyre side */
+    grid-area: tekst-side2;/* Setter området teksten skal stå */
+}
+
+.bilde-side2{/* Setter posisjonering på container for banner bildet*/
+    display: flex;/* Lager containeren for bilde som en flexbox for å enklere posisjonere bildet */
+    align-items: center;/* Setter posisjoneringen til center vertikalt */
+    justify-content: center;/* Setter posisjoneringen til center horisontalt */
+    float: right;/* floater bilde på høyre side slik at det samsvarer med tekst posisjonen */
+    grid-area: bilde-side2;/* Posisjonerer bilde i forhold til grid containeren */
+}
+#bilde1-side2{/* Styling av bilde  */
+    padding: 15px;/* Setter på padding fra bilde til border */
+    border-radius: 55px;/* avrunder bilde med 55pixler */
+    margin-right: 100px;/* Setter på margin på høyre side */
+    max-width: 100%;/* Setter bredden til å maks kunne være 100% av containeren */
+    height: auto;/* Setter høyden til å automatisk justeres etter containeren */
+}
+
+/*-----------------------------------------------Side 2 ------------------------------------------- */
+
+.container1 {/* Styling og posisjonering av mellomside */
+    height: fit-content;/*  */
+            background:linear-gradient(rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0.75)), url(images/bak1.jpg) no-repeat center center fixed;/* Setter opp første bilde med en svak svart farge over slik at tekst skal bli mer synlig. Setter på at bakgrunnen ikke skal kopieres flere ganger dersom den overstiger container størrelsen. Setter posisjonering fixed i senter av containeren*/
+            background-size: auto;/* Setter bakgrunns størrelsen til automatisk slika at den følger størrelsen på containeren */
+                -webkit-background-size: cover;/* funksjon for å få "cover" til å fungere i flest mulig nettlesere */
+                -moz-background-size: cover;/* funksjon for å få "cover" til å fungere i flest mulig nettlesere */
+                -o-background-size: cover;/* funksjon for å få "cover" til å fungere i flest mulig nettlesere */
+                background-repeat: no-repeat;/* funksjon for å få "cover" til å fungere i flest mulig nettlesere */
+}
+.container2{/* Setter margin og høyde på container for område for "tarje" seksjon */
+    margin: 100px;/* Setter margin på containeren på 100px top,bun,venstre side, høyre side */
+    height: fit-content;/* Setter høyde på contianeren til å være samme som innhold */
+}
+.container4 {/* Setter margin og høyde på container for område for "tobias" seksjon */
+    margin: 100px;/* Setter margin på containeren på 100px top,bunn,venstre side og høyre side */
+    height: fit-content;/* Setter høyde på containeren til å være samme som innhold */
+}
+
+/*---------------------------------------------BILDE og TEKST Tarje---------------------------------------*/
+/* Setter padding på overskrift for å få den vekk fra kanter */
+#ov1 {/* Styling og posisjonering av overskrift for "tarje" */
+    padding-top: 100px;/* Setter avstand fra skrift til border */
+    line-height: 1.3;/* Setter linje avstand */
+    color: white;/* Setter fargen til hvit */
+    font-size: 25px;/* Setter størrelse på teksten */
+    font-weight: bold;/* Setter formatteringen til fet skrift */
+    clear: left;/* Setter teksten til å holde seg unna bilde som skal floate på høyre siden */
+}
+
+#bilde-profil {/* styling og posisjonering av bilde  */
+    margin-top: 20px;/* Setter margin på top siden  */
+    height: 300px;/* Setter høyden på bilde til 300pixler */
+    width: 300px;/* Setter bredden til 300pixler */
+    border-radius: 175px;/* avrunder kantene på bilde */
+    float: right;/* Setter bilde til å bli plassert ved siden av teksten på høyre side */
+}
+
+.tekst-1 {/* styling og posisjonering av tekst ved siden av bilde */
+    line-height: 1.5;/* Setter linjeavstand */
+    color: white;/* Setter farge på skrift */
+    font-size: 20px;/* Setter størrelse på skrift */
+    clear: left;/* Setter skriften til å holde seg unna bilde som floater på høyre side */
+}
+
+/*--------------------------------------------------------------------------------------------------------------*/
+/*                                           BILDE og TEKST Andreas                                    */
+.container3{/* Setter margin og høyde på container for område for "andreas" seksjon */
+    margin: 100px;/* Setter margin på containeren på 100px top,bun,venstre side, høyre side */
+    height: fit-content;/* Setter høyde på containeren til å være samme som innhold */
+}
+#ov2 {/* Styling og posisjonering av overskrift for "tarje" */
+    line-height: 1.3;/* Setter linje avstand */
+    color: white;/* Setter fargen til hvit */
+    font-size: 25px;/* Setter størrelse på teksten */
+    font-weight: bold;/* Setter formatteringen til fet skrift */
+    clear: right;/* Setter teksten til å holde seg unna bilde som skal floate på høyre siden */
+}
+
+#bilde-5 {/* styling og posisjonering av bilde  */
+    height: 300px;/* Setter høyden på bilde til 300pixler */
+    width: 300px;/* Setter bredden til 300pixler */
+    border-radius: 175px;/* avrunder kantene på bilde */
+    float: left;/* Setter bilde til å bli plassert ved siden av teksten på venstre side */
+}
+
+.tekst-2 {/* styling og posisjonering av tekst ved siden av bilde */
+    line-height: 1.5;/* Setter linjeavstand */
+    color: white;/* Setter farge på skrift */
+    font-size: 20px;/* Setter størrelse på skrift */
+    clear: right;/* Setter skriften til å holde seg unna bilde som floater på høyre side */
+}
+
+
+/*--------------------------------------------------------------------------------------------------------------*/
+/*                                           BILDE og TEKST Tobias                                    */
+#ov3 {/* Styling og posisjonering av overskrift for "tobias" */
+    padding-top: 100px;/* Setter avstand fra skrift til border */
+    line-height: 1.3;/* Setter linje avstand */
+    color: white;/* Setter fargen til hvit */
+    font-size: 25px;/* Setter størrelse på teksten */
+    font-weight: bold;/* Setter formatteringen til fet skrift */
+    clear: left;/* Setter teksten til å holde seg unna bilde som skal floate på høyre siden */
+}
+
+#bilde-profil3 {/* styling og posisjonering av bilde  */
+    height: 300px;/* Setter høyden på bilde til 300pixler */
+    width: 300px;/* Setter bredden til 300pixler */
+    border-radius: 175px;/* avrunder kantene på bilde */
+    float: right;/* Setter bilde til å bli plassert ved siden av teksten på høyre side */
+}
+
+.tekst-3 {/* styling og posisjonering av tekst ved siden av bilde */
+    padding-bottom: 100px;/* Setter avstand fra skrift til bunn border */
+    line-height: 1.5;/* Setter linjeavstand */
+    color: white;/* Setter farge på skrift */
+    font-size: 20px;/* Setter størrelse på skrift */
+    clear: left;/* Setter skriften til å holde seg unna bilde som floater på høyre side */
+}
+
+/*                                                        MELLOMSIDE- side3 */
+/* posisjonering av container, satt som grid type for å plassere innhold utifra grid plassering */
+.side3-container {/* Lager container for mellomside  */
+    box-shadow: 0 0 15px 15px rgba(0, 0, 0, 0.5);/* Skyggelegger containeren */
+    background-color: white;/* bakgrunnsfarge */
+    display: grid;/* lager containeren som en grid for å kunne plassere innhold */
+    grid-template-areas:/* Setter opp områdene for innholdet */
+        "bilde-side2 bilde-side2 tekst-side2 tekst-side2"
+    ;
+    height: fit-content;/* Setter høyden til å være lik innholdet */
+}
+
+.tekst-side3 {/* Styling og posisjonering av tekst på mellomside */
+    display: flex;/* Setter containeren for tekst til å være en flexbox */
+    align-items: center;/* Sentrerer containeren i senter  vertikalt*/
+    justify-content: center;/* Sentrerer containeren i senter horisontalt */
+    font-size: 25px;/* Setter størrelse på skriften */
+    padding: 100px;/* Setter avstand fra text containeren til borderen rundt */
+    clear: left;/* Setter teksten til å holde seg unna bilde på venstre side */
+    grid-area: tekst-side2;/* Setter opp område tekstcontaineren skal stå */
+}
+
+
+.bilde-side3 {/* styling og posisjonering for bilde-containeren på mellomside */
+    display: flex;/* Lager containeren for bilde som en flexbox */
+    align-items: center;/* Sentrerer bilde vertikalt */
+    justify-content: center;/* Sentrerer bilde horisontalt */
+    float: left;/* Floater bilde på venstre side for å få teksten ved siden av bilde */
+    grid-area: bilde-side2;/* Setter opp område for bildecontaineren */
+}
+
+#bilde1-side3 {/* Styling og posisjonering av bilde */
+    margin: 50px;
+    box-shadow: 0 0 25px 25px rgba(0, 0, 0, 0.5);
+    padding: 15px;/* Lager avstand fra bilde til borderen */
+    border-radius: 55px;/* Avrunder kantene */
+    margin-left: 100px;/* Setter avstand fra venstre siden */
+    max-width: 100%;/* setter max bredde på 100% av containeren */
+    height: auto;/* Setter høyden til å tilpasse seg automatisk etter containeren */
+}
+/*--------------------------------------------------------------------------------------------------------------*/
+/* Overskrift arbeidsprosess */
+#overskrift-arbeid{
+    margin-bottom: 50px;
+    display: flex;/* Lager overskriften som en flexbox for enklere plassering */
+    justify-content: center;/* Sentrerer overskrift */
+    font-size: 50px;/* Setter størrelse på overskrift */
+}
+/*                                           HOVEDINNHOLD                                                        */
+
+.container-2 {/* Setter opp container for innhold om arbeidsprosess */
+    margin-bottom: 100px;/* Setter margin på bunn siden */
+    display: flex;/* Lager containeren som en flexbox */
+    align-items: center;/* Senterer containeren*/
+    justify-content: center;/* Setnrerer containereren */
+
+}
+
+
+.hovedinnhold {/* styling av container for hovedinnhold  */
+    min-height: fit-content;/* Setter på minimumshøyde på containeren til å være lik innholdet */
+    display: flex;/* lager containeren som en flexbox */
+    flex-direction: column;/* Setter opp retningen på innholdet til columns for å få oppsettet til å være sortert nedover */
+    margin: 100px 75px 0 75px;/* Setter på margin på topp,høyre side og venstre side */
+    background-color: rgb(11, 36, 36);/* Setter bakgrunnsfarge på containeren */
+    box-shadow: 0 0 15px 15px rgba(0, 0, 0, 0.6);/* Skyggelegger rundt containeren */
+    border: solid 2px transparent;/* Setter usynlig border rundt */
+    border-radius: 25px;/* avrunder kanter */
+    width: 2500px;/* Setter en fixed bredde på containeren */
+    min-width: 500px;/* Setter minimumsbredde på containeren */
+    color: white;/* Setter skriftfargen i containeren til hvit */
+}
+
+.area2-container {/* styling av containeren for hovedinnhold */
+    margin: 100px;/* Setter margin på containeren */
+}
+
+/*--------------------------------------------------------------------------------------------------------------*/
+/*                                           BILDE og TEKST 1                                    */
+
+#ov4 {/* Styling av overskrift */
+    font-size: 25px;/* størrelse på overskrift */
+    font-weight: bold;/* setter skriften til "fet" */
+}
+
+
+#bilde-4 {/* Styling av bilde */
+    height: 400px;/* Setter høyde */
+    width: 600px;/* Setter bredde */
+    border-radius: 15px;/* avrunder kanter */
+    float: right;/* Floater bilde til høyre side */
+}
+
+
+.tekst-4 {/* Styling av tekst */
+    font-size: 20px;/* Setter størrelse til 20pixler */
+}
+/* Hei bård, lite easteregg for å skjekke at du har lest deg hele veien ned hit :=). Husk å si namaste welcome to hell neste gang vi møtes FOR DETTE VAR FAEN HELL! mvh Tarje, Tobias & Andreas (kan ikke love at dette er eneste easteregget) (og nei ingen av ordene her er brukt i neste easteregg :=> )*/
+/*--------------------------------------------------------------------------------------------------------------*/
+/*                                                BILDE og TEKST 2                                    */
+#ov4-2 {/* Styling av overskrift */
+    font-size: 25px;/* Størrelse på overskrift */
+    font-weight: bold;/* Setter skrift til "fet" */
+    clear: right;/* Setter skriften til å holde seg unna venstre side */
+}
+
+#bilde-4-2 {/* Styling av bilde */
+    margin-top: 100px;/* Setter margin på top siden til 100pixler */
+    height: 400px;/* Setter høyde */
+    width: 600px;/* Setter bredde */
+    border-radius: 15px;/* avrunder kanter */
+    float: left;/* Floater bilde på venstre side */
+}
+
+.tekst-4-2 {/* Styling av tekst */
+    margin-top: 250px;/* Setter margin på top siden til 250pixler */
+    font-size: 20px;/* Setter størrelse */
+    clear: right;/* Setter skriften til å holde seg unna venstre side */
+}
+
+/*--------------------------------------------------------------------------------------------------------------*/
+/*--------------------------------------------------------------------------------------------------------------*/
+/*                                                BILDE og TEKST 3                                    */
+#ov6 {/* Styling av overskrift */
+    font-size: 25px;/* Størrelse på overskrift */
+    font-weight: bold;/* Setter skrift til "fet" */
+    clear: left;/* Setter skriften til å holde seg unna høyre side */
+}
+
+#bilde-6 {/* Styling av bilde */
+    margin-top: 100px;/* Setter margin på top siden til 100pixler */
+    height: 400px;/* Setter høyde */
+    width: 600px;/* Setter bredde */
+    border-radius: 15px;/* avrunder kanter */
+    float: right;/* Floater bilde på høyre side */
+}
+
+.tekst-6 {/* Styling av tekst */
+    margin-top: 250px;/* Setter margin på top siden til 250pixler */
+    font-size: 20px;/* Setter størrelse */
+    clear: left;/* Setter skriften til å holde seg unna høyre side */
+}
+
+/*------------------------------Bildevisning 4 bilder på rekke----------------------------------------------------*/
+.container-4-bilder {/* Lager container for 4-bilder */
+    align-items: start;/* Posisjonerer containeren  */
+    display: flex;/* Lager containeren som en flexbox */
+    flex-wrap: wrap;/* Setter på flex-wrap funskjon for at dersom noe av innholdet skulle komme utenfor flexboxen vil det bli flyttet ned på en ny linje */
+    justify-content: center;/* Senterer containeren vertikalt */
+    flex-direction: row;/* Setter opp innholdet i containeren til å sortere seg i en rekke */
+    width: 100%;/* Setter bredden på containeren til å være 100% bredde av tilhørende parent */
+}
+
+.seksjon1 {/* Styling og posisjonering av første seksjon */
+    display: flex;/* Lager containeren som en flexbox */
+    justify-content: center;/* Sentrerer containeren horisontalt */
+    flex-direction: column;/* Setter opp sortering på innholdet til å sortere seg nedover i columns */
+    width: 430px;/* Setter bredde på containeren */
+}
+
+.bildeseksjon {/* Styling av bildeseksjonen i containeren */
+    margin: 15px 15px 0 15px;/* Setter på margin på top, høyre side og venstre side */
+    height: 450px;/* Setter høyde */
+    display: flex;/* lager containereren som en flexbox */
+    justify-content: center;/* Sentrerer containeren horisontalt */
+    align-items: center;/* Sentrerer containeren vertikalt */
+    border-radius: 5px;/* avrunder kanter med 5 pixler */
+}
+
+#bilde1 {/* styling av bilde  */
+    border-top-right-radius: 30px;/* Avrunder top høyre kant */
+    border-top-left-radius: 30px;/* Avrunder top venstre kant */
+    height: 100%;/* Setter høyden til 100% av containeren */
+    width: 100%;/* Setter bredde */
+    max-height: 450px;/* Setter max-høyde */
+}
+
+.tekst1{/* lager container for tekst innholdet */
+    display: flex;/* Lager denne som en flexbox */
+    align-items: center;/* Sentrerer tekst containeren til senter vertikalt */
+    justify-content: center;/* Sentrerer containeren horisontalt */
+    height: 100px;/* Setter høyden til 100% av bildeseksjon parent containeren */
+    background-color: rgb(19, 44, 44);/* Setter på bakgrunnsfarge på tekst området */
+    color: white;/* Setter tekst fargen til hvit */
+    font-size: 17px;/* Setter størrelse på teksten */
+    padding: 15px 15px 15px 15px;/* Setter avstand fra tekst til border */
+    margin: 0 15px 0 15px;/* Setter avstand fra containeren til høyre og venstre side*/
+
+}
+/* -------------------Linje mellom sider----------------------- */
+.area5 {/* Styling av mellomlinje */
+    margin: 5% 5% 5% 5%;/* Setter margin på 5% på alle sider */
+    background-color: black;/* Setter fargen på streken til svart */
+    min-height: 0.1px;/* Setter min høyde på 0.1pixler */
+    max-height: 14px;/* Setter max høyde til 14pixler */
+}
+/* slagord */
+.slagord{/* Styling av slagord */
+    margin-top: 25px;/* Setter avstand fra top på 25 pixler */
+    display: flex;/* Lager containeren som en flexbox */
+    justify-content: center;/* Sentrerer slagordet */
+    font-size: 50px;/* Setter størrelse på skriften */
+}
+
+/*---------------------------------------------DETALJER AVSLUTTENDE LINJE-------------------------------------------------*/
+.detaljer-container {/* Setter opp container for detaljelinjen */
+    display: grid;/* Setter detalje-linjen som en grid type for å enkelt kunne plassere områdene i griden */
+    min-height: 70px;/* Setter opp minimumshøyde på containeren */
+    background-color: rgb(114, 144, 144);/* Setter bakgrunnsfarge på containeren */
+    grid-template-areas:/* Setter opp områdene for griden */
+        "d-1 d-2 d-3 d-4"/* Setter opp områdene for griden */
+        "d-1 d-2 d-3 d-4"/* Setter opp områdene for griden */
+        "d-1 d-2 d-3 d-4"/* Setter opp områdene for griden */
+        "d-1 d-2 d-3 d-4"/* Setter opp områdene for griden */
+    ;
+}
+
+.d-1 {/* Setter opp området for første sted hvor kontaktinformasjon setter */
+    display: flex;/* Setter containeren opp som en flexbox */
+    grid-area: d-1;/* Setter området på containeren */
+    align-items: end;/* Setter posisjonen til innholdet vetikalt til å være på enden */
+    justify-content: start;/* Setter posisjonen på innholdet til å være på starten horisontalt */
+}
+
+.d-2 {/* Setter opp tomt området for å fylle mellomrommet imellom d1 og d4. Dette kunne også skreves som "." i main containeren.*/
+    grid-area: d-2;/*  Setter området på d-2*/
+}
+
+.d-3 {/* Setter opp tomt området for å fylle mellomrommet imellom d1 og d4. Dette kunne også skreves som "." i main containeren.*/
+    grid-area: d-3;/* Setter området på d-3 */
+}
+
+.d-4 {/* Setter opp området for navn som har laget nettsiden */
+    margin-right: 15px;/* Setter på en margin på 15 pixler på høre side av containeren */
+    display: flex;/* Setter containern som en flexbox for enklere posisjonering */
+    grid-area: d-4;/* Setter posisjonering i forhold til detaljecontaineren */
+    align-items: end;/* Setter posisjoneringen til slutten av containeren */
+    justify-content: end;/* Setter posisjoneringen til slutten av containernen */
+}
