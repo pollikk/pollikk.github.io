@@ -1,0 +1,635 @@
+
+/* Setter standard margin og paddin til 0 for hele siden */
+*{
+    margin: 0;/* Setter margin til 0 som standard for siden, dette avgjør avstanden som hvert element skal ha avstand fra alt annet. settes som 0 for å ikke ha noen avstand som standard */
+    padding: 0;/* Setter padding til 0 som standard for siden, dette avgjør avstanden fra innholdet til borderen */
+}
+/* Setter bakgrunnsfarge på "body" */
+body {
+background-color: darkslategray;/* Setter bakgrunnsfarge */
+}
+/* Setter standardverdier på knappene i bryterpanelet */
+a {
+    color: inherit;  /* Setter fargen til å bli den samme som det "parent" diven har som farge */
+    font-style: inherit;  /* Setter stylingen på teksten til det samme som "parent" diven har */
+    font-family: inherit;  /* Setter tekst typen til å være det samme som parenten har  */
+    text-decoration: none;/* Setter text dekorasjonen til none for å få vekk dekorasjon som kommer med som standard når man lager en liste */
+}
+/* Oppsett av bryterpanel. posisjon settes til sticky for å få bryterpanelet til å følge etter når siden scrolles nedover og oppover */
+.bryterpanel{
+    margin: 0 25px 0 0;/* Setter margin på høyre side av containeren */
+    position: sticky;/* Setter posisjoneringen til sticky slik at bryterpanelet skal følge med når det scrolles nedover  */
+    display:flex ;/* lager bryterpanelet som en flexbox for enklere posisjonering */
+    flex-direction: row;/* Setter flex direction til "row" dette for at bryterpanelet skal organiseres horisontalt framfor vertikalt */
+    justify-content: end;/* Setter posisjoneringen på bryterpanelet på enden av containeren */
+    top:0;/* Setter "top" til 0 som snakker med "sticky" posisjoneringen og gjør at sticky vil følge top posisjonen. Dette gjør at sticky aktiveres når top=0 */
+}
+/* Setter standardverdier på alle paragrafer */
+p{
+    padding: 100px;/* Setter padding fra tekst til border på 100pixler */
+    font-size: 20px;/* Setter størrelsen på teksten */
+}
+/* Styling av alle knapper på bryterpanelet (satt som button1 for å kunne bruke samme styling på forskjellige sider hvor den er definert som button1 */
+.button1 { 
+    margin-left: 20px;/* Setter margin fra brytere i bryterpanel på venstre side */
+    display: flex;/* Lager bryterene som flexboxer for å kunne enkelt posisjonere knappene */
+        padding: 2px;/* Setter på 2pixler for padding fra skrift til border */
+        width: 150px;/* Setter bredde på knappene */
+        justify-content: center;/* posisjonerer knappene horisontalt til senter */
+        border: solid 2px transparent;/* Setter usynlig border på knappene */
+        border-radius: 9px;/* avrunder kantene på knappene */
+        background-color: black;/* Setter bakgrunnsfargen til svart */
+        color: white;/* Setter tekst farge til hvit */
+        cursor: pointer;/* lager hover effekt på bryterene for når musen er over */
+        font-size: 14px;/* Setter størrelse på skriften */
+        transition: 1s;/* Setter tid for hvor lang tid det tar å gjenomføre hover effekten */
+}
+/* Setter hover effekt på alle knapper for å få knappene til å scales opp når de hovres*/
+.button1:hover{
+    transform: scale(1.2);/* Skalerer knappene større når de hovres */
+    border: solid 2px darkblue;/* Setter på blå border når knappene hovres */
+}
+.container{/* Lager container */
+    display: grid;/* Lager containeren som en grid */
+    grid-template-areas:/* Setter opp områder i griden som containerene skal plasseres i  */
+    "tilbakeKnapp tilbakeKnapp tilbakeKnapp tilbakeKnapp tilbakeKnapp"/* Setter opp områder i griden og plasserer ut områdenavn */
+    "area1 area1 area1 area1 area1"/* Setter opp områder i griden og plasserer ut områdenavn */
+    "area2 area2 area2 area2 area2"/* Setter opp områder i griden og plasserer ut områdenavn */
+    ;
+}
+/* Tidligere styling av tilbakeknapp brukt under utvikling (kan slettes) */
+.tilbakeKnapp{
+    grid-area: tilbakeKnapp;/* brukt som tilbakeknapp tidligere, ikke i bruk nå lengre. beholdes som test knapp */
+}
+/* styling og posisjonering av overskrift for siden */
+.area1 {
+    background-color: rgb(39, 89, 89);/* Setter på bakgrunn på overskriften */
+    display: flex;/* Setter containeren for overskriften som en flexbox */
+    justify-content: center;/* justerer innholdet til senter */
+    font-size: 40px;/* Setter størrelse på skriften */
+    grid-area: area1;/* Setter området skriften skal plasseres i */
+    min-height: 50px;/* Setter minimumshøyde på containeren */
+    border: solid 2px black;/* Setter border på containeren */
+    box-shadow: 5px 5px 5px 5px rgba(0, 0, 0, 0.3);/* skyggelegger rundt containeren */
+}
+/* styling og posisjonering av banner */
+.banner {
+    height: 600px;/*Setter høyde */
+    background: linear-gradient(rgba(0, 0, 0, 0.68), rgba(0, 0, 0, 0.68)), url(images/kodeprogresjon/bak1-koding.PNG) no-repeat center center fixed;/*  Setter bakgrunnsbilde og farger over med svart for å få tekst mer synlig. Setter også til no repeat og centrerer bakgrunnen i en fixed posisjon*/
+    background-size: auto;/*  Setter størrelsen på bakgrunnen til å være automatisk justert etter containeren*/
+    -webkit-background-size: cover;/* funksjon for å få "cover" til å fungere i flest mulig nettlesere */
+    -moz-background-size: cover;/* funksjon for å få "cover" til å fungere i flest mulig nettlesere */
+    -o-background-size: cover;/* funksjon for å få "cover" til å fungere i flest mulig nettlesere */
+    background-repeat: no-repeat;/* funksjon for å få "cover" til å fungere i flest mulig nettlesere */
+    display: grid;/* Lager containeren som en grid */
+    flex-wrap: wrap;/* Setter på wrap funksjon for at innhold som skulle ha oversteget containeren vil begynne på en ny linje */
+    grid-template-areas:/* Setter opp områder i grid containeren */
+        ". overtekst . ."/* Setter opp område i grid containeren */
+        ". navbar . ."/* Setter opp område i grid containeren */
+    ;
+}
+
+/* knapper plassert på banner */
+#li1-1{/* Lager liste for knapper i banneren */
+    color: black;/* Setter skrift farge til svart */
+    padding:5px ;/* Setter avstand fra innhold til borderen */
+    border: solid 2px black;/* Setter på svart border på 2pixler i solid form */
+    border-radius: 15px;/* Avrunder bryterene */
+    background-color: darkcyan;/* Setter på bakgrunnsfarge på bryterene */
+}
+/* hover effekt på knapper i banneren */
+#li1-1:hover{/*Setter på hover effekt på bryterene  */
+    transform: scale(1.3);/* Skalerer opp når bryterene blir hovret */
+}
+/* posisjonering og størrelse på skrift på brytere */
+.navbar {
+    font-size: 25px;/* Setter størrelse på skrift */
+    margin: 25px 150px 0 150px;/* Setter margin på skriften på topp, høyre side og venstre side */
+    width: 100%;/* Setter bredden til å dekke 100%*/
+    display: flex;/* Setter navbaren som en flex for å enkelt kunne justere posisjoneringer */
+    justify-content: center;/* Setter horisontal posisjonering sentrert  */
+    align-items: center;/* Setter vertikal posisjonering sentrert */
+    justify-content: space-between;/* Setter avstand mellom elementene */
+
+}
+/* posisjonering på ul containeren og listen med brytere */
+.navbar ul li {
+    margin: 0 15px 0 15px;/* Setter margin på høre og venstre side */
+    list-style: none;/* Setter list style til none for å få vekk standard style fra listen */
+    display: inline-block;/* Setter displayet på en linje */
+    position: relative;/* Setter posisjonen til å være relativ */
+}
+/* Setter dekorasjonen til bryterene til none for å få vekk unsigned list dekorasjonen*/
+.navbar ul li a {
+    text-decoration: none;/* Setter ingen dekorasjon på */
+    color: #fff;/* Setter fargn hvit på ul, li og a elementer */
+}
+/* setter tid på hvor lang tid det tar å lage streken under knappene */
+li{
+    transition: 1s;/* lager en tid på 1sek */
+}
+
+li:hover{/* Hover effekt for liste */
+    font-size: 30px;/* Setter hover effekt hvor knappene øker i skriftstørrelse */
+}
+
+.navbar ul li::after {/* lager opp strek som skal komme når knappene hovres */
+    content: "";/* setter contentet tomt for å kun lage ne strek */
+    height: 3px;/* Størrelse på streken */
+    width: 0%;/* bredden streken skal starte på  */
+    background: green;/* Fargen på streken */
+    position: absolute;/* Setter posisjonen til absolute relatert til parent containeren */
+    top: 50px;/* Setter posisjonen 50 pixler fra toppen på parent containeren */
+    left: 0;/* Setter streken til å begynne på venstre side */
+    transition: 0.5s;/* Setter et halvt sekund for å tegne streken */
+}
+/* setter på hover effekten på knappene hvor streken går fra 0-100% i bredde */
+.navbar ul li:hover::after {
+    width: 100%;/* Setter bredden til 100% etter å ha hovret et halvt sekund */
+}
+
+/* -----------------------------------------------------Mellomside */
+
+.container-main{/* Styling av containeren på mellomsiden */
+border-top: solid 2px black;/* Setter på border på topp siden, svart med en størrelse på 2 pixler */
+border-bottom: solid 2px black;/* Setter på border på bunn siden, svart med en størrelse på 2 pixler */
+}
+
+
+.tekst-container{/* posisjonering av tekst i mellomsiden */
+display: flex;/* Lager tekst containeren som en flexbox */
+flex-direction: row;/* Setter posisjoneringen på innholdet til å være satt opp i en rekke  */
+justify-content: center;/* Sentrerer tekst containeren */
+align-items: center;/* Sentrerer tekst containeren */
+flex-wrap: wrap;/* Setter wrap funksjon på containeren slik at tekst som går utenfor vil komme på ny linje */
+}
+/* styling av tekst i mellomsiden */
+#tekst1{
+    margin: 25px 15px 25px 0;/* Setter margin på topp, høyre side og bunn side */
+    color: white;/* Setter tekst fargen til hvit */
+    width: 400px;/* Setter bredden på teksten til 400pixler */
+    font-size: 20px;/* Setter størrelse på teksten */
+    grid-area: tekst1;/* Setter området teksten skal plasseres i */
+}
+/* styling av størrelse på bildene brukt i mellomsiden */
+#bilde1{
+    padding: 30px;/* Setter padding fra bilde til borderen */
+    width: 150px;/* Setter bredden til 150pixler */
+    height: 100px;/* Setter høyde */
+    border-radius: 50%;/* avrunder kanter */
+}
+/*   -------------------------------------          Side 2 */
+/* posisjonering av overskrift over nettside kode progresjonen */
+.innledning-side2{
+    display: flex;/* Setter innledningscontaineren til en flexbox for enklere posisjoneringer */
+    flex-direction: row;/* Setter posisjoneringen til å være i en rekke horisontalt */
+    justify-content: space-around;/* Setter mellomrom mellom */
+}
+/* setter størrelse og padding på overskriften */
+#overskrift-side2{
+    padding-top: 25px;/* Setter padding fra top til borderen */
+    font-size: 30px;/* Setter størrelse på overskriften */
+}
+/* Setter opp container for innholdet for nettside kode og progresjonen */
+.container-s2{
+    margin: 50px 50px 40px 50px;/* Setter margin på topp,bunn, høyre side og venstre side */
+    margin-top:50px;/* brukt under testing, blir overstyrt og er ikke i bruk */
+    margin-bottom: 40px;/* brukt under testing, blir overstyrt og er ikke i bruk */
+    height: 500px;/* Setter høyde på containeren */
+display: grid;/* Lager containeren til en grid for å enkelt kunne plassere innhold */
+grid-template-areas:/* Setter opp områdene i griden */
+"area2-1 area2-2" 
+;
+}
+/*                                  side 2 progresjon kode */
+/* styling av hver av områdene i containeren */
+.area2-1{/* styling og posisjonering for første område med bilde som bakgrunn  */
+    padding-left:170px;/* Setter avstand fra innhold til border */
+    justify-content: center;/* Setter posisjonen til senter */
+    width: 860px;/* Setter bredden */
+    height: 520px;/* Setter høyden */
+    grid-area: area2-1;/* Setter plassering i griden */
+    background-image: url(images/kodeprogresjon/kode-progresjon-1.PNG);/* legger til bakgrunnsbilde */
+    background-position-y: center;/* Sentrerer bildet */
+    background-size: auto;/* Setter automatisk størrelse etter containeren */
+    -webkit-background-size: cover;/* funksjon for å få "cover" til å fungere i flest mulig nettlesere */
+    -moz-background-size: cover;/* funksjon for å få "cover" til å fungere i flest mulig nettlesere */
+    -o-background-size: cover;/* funksjon for å få "cover" til å fungere i flest mulig nettlesere */
+    background-repeat: no-repeat;/* Setter bakgrunnsbilde til å ikke kopieres inn flere ganger */
+}
+
+.area2-2{/* Styling og posisjonering av tekst container */
+    line-height: 1.5;/* Linje høyde for å få mellomrom mellom hver linje */
+    display: flex;/* Lager containeren til en flexbox */
+    align-items:center;/* Sentrerer containeren */
+    font-size: 20px;/* Setter skriftstørrelsen */
+    border: solid 1px black;/* Setter en border rundt */
+    box-shadow: 0 0 15px 15px rgba(0, 0, 0, 0.3);/* Skyggelegger rundt containeren */
+    border-radius: 15px;/* Avrunder kantene */
+    justify-content: center;/* Sentrerer containeren horisontalt */
+    background-color: white;/* Setter bakgrunnsfarge til hvit */
+    width: 500px;/* Setter bredden til 500pixler */
+    grid-area: area2-2;/* Setter grid området for hvor teksten skal plasseres */
+}
+/* --------------------------------------------------------- */
+/* ---------------------------------------------side 3 */
+.area3-1 {/* Styling og posisjonering av bilde nummer to */
+    padding-left: 170px;/* Setter avstand fra innhold til border */
+    justify-content: center;/* Setter posisjonen til senter */
+    width: 860px;/* Setter bredden */
+    height: 520px;/* Setter høyden */
+    grid-area: area2-1;/* Setter plassering i griden */
+    background-image: url(images/kodeprogresjon/kode-progresjon-2.PNG);/* legger til bakgrunnsbilde */
+    background-position-y: center;/* Sentrerer bildet */
+    background-size: auto;/* Setter automatisk størrelse etter containeren */
+    -webkit-background-size: cover;/* funksjon for å få "cover" til å fungere i flest mulig nettlesere */
+    -moz-background-size: cover;/* funksjon for å få "cover" til å fungere i flest mulig nettlesere */
+    -o-background-size: cover;/* funksjon for å få "cover" til å fungere i flest mulig nettlesere */
+    background-repeat: no-repeat;/* Setter bakgrunnsbilde til å ikke kopieres inn flere ganger */
+}
+
+.area3-2 {/* Styling og posisjonering av tekst container */
+    line-height: 1.5;/* Linje høyde for å få mellomrom mellom hver linje */
+    display: flex;/* Lager containeren til en flexbox */
+    align-items: center;/* Sentrerer containeren */
+    font-size: 20px;/* Setter skriftstørrelsen */
+    border: solid 1px black;/* Setter en border rundt */
+    box-shadow: 0 0 15px 15px rgba(0, 0, 0, 0.3);/* Skyggelegger rundt containeren */
+    border-radius: 15px;/* Avrunder kantene */
+    justify-content: center;/* Sentrerer containeren horisontalt */
+    background-color: white;/* Setter bakgrunnsfarge til hvit */
+    width: 500px;/* Setter bredden til 500pixler */
+    grid-area: area2-2;/* Setter grid området for hvor teksten skal plasseres */
+}
+
+/* Side 3 */
+.area4-1 {/* Styling og posisjonering av bilde nummer to */
+    padding-left: 170px;/* Setter avstand fra innhold til border */
+    justify-content: center;/* Setter posisjonen til senter */
+    width: 860px;/* Setter bredden */
+    height: 520px;/* Setter høyden */
+    grid-area: area2-1;/* Setter plassering i griden */
+    background-image: url(images/kodeprogresjon/kode-progresjon-3.PNG);/* legger til bakgrunnsbilde */
+    background-position-y: center;/* Sentrerer bildet */
+    background-size: auto;/* Setter automatisk størrelse etter containeren */
+    -webkit-background-size: cover;/* funksjon for å få "cover" til å fungere i flest mulig nettlesere */
+    -moz-background-size: cover;/* funksjon for å få "cover" til å fungere i flest mulig nettlesere */
+    -o-background-size: cover;/* funksjon for å få "cover" til å fungere i flest mulig nettlesere */
+    background-repeat: no-repeat;/* Setter bakgrunnsbilde til å ikke kopieres inn flere ganger */
+}
+
+.area4-2 {/* Styling og posisjonering av tekst container */
+    line-height: 1.5;/* Linje høyde for å få mellomrom mellom hver linje */
+    display: flex;/* Lager containeren til en flexbox */
+    align-items: center;/* Sentrerer containeren */
+    font-size: 20px;/* Setter skriftstørrelsen */
+    border: solid 1px black;/* Setter en border rundt */
+    box-shadow: 0 0 15px 15px rgba(0, 0, 0, 0.3);/* Skyggelegger rundt containeren */
+    border-radius: 15px;/* Avrunder kantene */
+    justify-content: center;/* Sentrerer containeren horisontalt */
+    background-color: white;/* Setter bakgrunnsfarge til hvit */
+    width: 500px;/* Setter bredden til 500pixler */
+    grid-area: area2-2;/* Setter grid området for hvor teksten skal plasseres */
+}
+/* side 4 */
+.area5-1 {/* Styling og posisjonering av bilde nummer to */
+    padding-left: 170px;/* Setter avstand fra innhold til border */
+    justify-content: center;/* Setter posisjonen til senter */
+    width: 860px;/* Setter bredden */
+    height: 520px;/* Setter høyden */
+    grid-area: area2-1;/* Setter plassering i griden */
+    background-image: url(images/kodeprogresjon/kode-progresjon-4.PNG);/* legger til bakgrunnsbilde */
+    background-position-y: center;/* Sentrerer bildet */
+    background-size: auto;/* Setter automatisk størrelse etter containeren */
+    -webkit-background-size: cover;/* funksjon for å få "cover" til å fungere i flest mulig nettlesere */
+    -moz-background-size: cover;/* funksjon for å få "cover" til å fungere i flest mulig nettlesere */
+    -o-background-size: cover;/* funksjon for å få "cover" til å fungere i flest mulig nettlesere */
+    background-repeat: no-repeat;/* Setter bakgrunnsbilde til å ikke kopieres inn flere ganger */
+}
+
+.area5-2 {/* Styling og posisjonering av tekst container */
+    line-height: 1.5;/* Linje høyde for å få mellomrom mellom hver linje */
+    display: flex;/* Lager containeren til en flexbox */
+    align-items: center;/* Sentrerer containeren */
+    font-size: 20px;/* Setter skriftstørrelsen */
+    border: solid 1px black;/* Setter en border rundt */
+    box-shadow: 0 0 15px 15px rgba(0, 0, 0, 0.3);/* Skyggelegger rundt containeren */
+    border-radius: 15px;/* Avrunder kantene */
+    justify-content: center;/* Sentrerer containeren horisontalt */
+    background-color: white;/* Setter bakgrunnsfarge til hvit */
+    width: 500px;/* Setter bredden til 500pixler */
+    grid-area: area2-2;/* Setter grid området for hvor teksten skal plasseres */
+}
+/* side 6 */
+.area6-1 {/* Styling og posisjonering av bilde nummer to */
+    padding-left: 170px;/* Setter avstand fra innhold til border */
+    justify-content: center;/* Setter posisjonen til senter */
+    width: 860px;/* Setter bredden */
+    height: 520px;/* Setter høyden */
+    grid-area: area2-1;/* Setter plassering i griden */
+    background-image: url(images/kodeprogresjon/kode-progresjon-5.PNG);/* legger til bakgrunnsbilde */
+    background-position-y: center;/* Sentrerer bildet */
+    background-size: auto;/* Setter automatisk størrelse etter containeren */
+    -webkit-background-size: cover;/* funksjon for å få "cover" til å fungere i flest mulig nettlesere */
+    -moz-background-size: cover;/* funksjon for å få "cover" til å fungere i flest mulig nettlesere */
+    -o-background-size: cover;/* funksjon for å få "cover" til å fungere i flest mulig nettlesere */
+    background-repeat: no-repeat;/* Setter bakgrunnsbilde til å ikke kopieres inn flere ganger */
+}
+
+.area6-2 {/* Styling og posisjonering av tekst container */
+    line-height: 1.5;/* Linje høyde for å få mellomrom mellom hver linje */
+    display: flex;/* Lager containeren til en flexbox */
+    align-items: center;/* Sentrerer containeren */
+    font-size: 20px;/* Setter skriftstørrelsen */
+    border: solid 1px black;/* Setter en border rundt */
+    box-shadow: 0 0 15px 15px rgba(0, 0, 0, 0.3);/* Skyggelegger rundt containeren */
+    border-radius: 15px;/* Avrunder kantene */
+    justify-content: center;/* Sentrerer containeren horisontalt */
+    background-color: white;/* Setter bakgrunnsfarge til hvit */
+    width: 500px;/* Setter bredden til 500pixler */
+    grid-area: area2-2;/* Setter grid området for hvor teksten skal plasseres */
+}
+/* side 7 */
+.area7-1 {/* Styling og posisjonering av bilde nummer to */
+    padding-left: 170px;/* Setter avstand fra innhold til border */
+    justify-content: center;/* Setter posisjonen til senter */
+    width: 860px;/* Setter bredden */
+    height: 520px;/* Setter høyden */
+    grid-area: area2-1;/* Setter plassering i griden */
+    background-image: url(images/kodeprogresjon/kode-progresjon-5.PNG);/* legger til bakgrunnsbilde */
+    background-position-y: center;/* Sentrerer bildet */
+    background-size: auto;/* Setter automatisk størrelse etter containeren */
+    -webkit-background-size: cover;/* funksjon for å få "cover" til å fungere i flest mulig nettlesere */
+    -moz-background-size: cover;/* funksjon for å få "cover" til å fungere i flest mulig nettlesere */
+    -o-background-size: cover;/* funksjon for å få "cover" til å fungere i flest mulig nettlesere */
+    background-repeat: no-repeat;/* Setter bakgrunnsbilde til å ikke kopieres inn flere ganger */
+}
+
+.area7-2 {/* Styling og posisjonering av tekst container */
+    line-height: 1.5;/* Linje høyde for å få mellomrom mellom hver linje */
+    display: flex;/* Lager containeren til en flexbox */
+    align-items: center;/* Sentrerer containeren */
+    font-size: 20px;/* Setter skriftstørrelsen */
+    border: solid 1px black;/* Setter en border rundt */
+    box-shadow: 0 0 15px 15px rgba(0, 0, 0, 0.3);/* Skyggelegger rundt containeren */
+    border-radius: 15px;/* Avrunder kantene */
+    justify-content: center;/* Sentrerer containeren horisontalt */
+    background-color: white;/* Setter bakgrunnsfarge til hvit */
+    width: 500px;/* Setter bredden til 500pixler */
+    grid-area: area2-2;/* Setter grid området for hvor teksten skal plasseres */
+}
+/* side 8 */
+.area8-1 {/* Styling og posisjonering av bilde nummer to */
+    padding-left: 170px;/* Setter avstand fra innhold til border */
+    justify-content: center;/* Setter posisjonen til senter */
+    width: 860px;/* Setter bredden */
+    height: 520px;/* Setter høyden */
+    grid-area: area2-1;/* Setter plassering i griden */
+    border: solid 2px black;/* Setter border rundt containeren */
+    background-image: url(images/kodeprogresjon/kode-progresjon-6.PNG);/* legger til bakgrunnsbilde */
+    background-position-y: center;/* Sentrerer bildet */
+    background-size: auto;/* Setter automatisk størrelse etter containeren */
+    -webkit-background-size: cover;/* funksjon for å få "cover" til å fungere i flest mulig nettlesere */
+    -moz-background-size: cover;/* funksjon for å få "cover" til å fungere i flest mulig nettlesere */
+    -o-background-size: cover;/* funksjon for å få "cover" til å fungere i flest mulig nettlesere */
+    background-repeat: no-repeat;/* Setter bakgrunnsbilde til å ikke kopieres inn flere ganger */
+}
+
+.area8-2 {/* Styling og posisjonering av tekst container */
+    line-height: 1.5;/* Linje høyde for å få mellomrom mellom hver linje */
+    display: flex;/* Lager containeren til en flexbox */
+    align-items: center;/* Sentrerer containeren */
+    font-size: 20px;/* Setter skriftstørrelsen */
+    border: solid 1px black;/* Setter en border rundt */
+    box-shadow: 0 0 15px 15px rgba(0, 0, 0, 0.3);/* Skyggelegger rundt containeren */
+    border-radius: 15px;/* Avrunder kantene */
+    justify-content: center;/* Sentrerer containeren horisontalt */
+    background-color: white;/* Setter bakgrunnsfarge til hvit */
+    width: 500px;/* Setter bredden til 500pixler */
+    grid-area: area2-2;/* Setter grid området for hvor teksten skal plasseres */
+}
+
+/* hardware side 9 */
+.area9-1 {/* Styling og posisjonering av bilde nummer to */
+    padding-left: 170px;/* Setter avstand fra innhold til border */
+    justify-content: center;/* Setter posisjonen til senter */
+    width: 860px;/* Setter bredden */
+    height: 520px;/* Setter høyden */
+    grid-area: area2-1;/* Setter plassering i griden */
+    border: solid 2px black;/* Setter border rundt containeren */
+    background-image: url(images/kodeprogresjon/hardware-1.PNG);/* legger til bakgrunnsbilde */
+    background-position-y: center;/* Sentrerer bildet */
+    background-size: auto;/* Setter automatisk størrelse etter containeren */
+    -webkit-background-size: cover;/* funksjon for å få "cover" til å fungere i flest mulig nettlesere */
+    -moz-background-size: cover;/* funksjon for å få "cover" til å fungere i flest mulig nettlesere */
+    -o-background-size: cover;/* funksjon for å få "cover" til å fungere i flest mulig nettlesere */
+    background-repeat: no-repeat;/* Setter bakgrunnsbilde til å ikke kopieres inn flere ganger */
+}
+
+.area9-2 {/* Styling og posisjonering av tekst container */
+    line-height: 1.5;/* Linje høyde for å få mellomrom mellom hver linje */
+    display: flex;/* Lager containeren til en flexbox */
+    align-items: center;/* Sentrerer containeren */
+    font-size: 20px;/* Setter skriftstørrelsen */
+    border: solid 1px black;/* Setter en border rundt */
+    box-shadow: 0 0 15px 15px rgba(0, 0, 0, 0.3);/* Skyggelegger rundt containeren */
+    border-radius: 15px;/* Avrunder kantene */
+    justify-content: center;/* Sentrerer containeren horisontalt */
+    background-color: white;/* Setter bakgrunnsfarge til hvit */
+    width: 500px;/* Setter bredden til 500pixler */
+    grid-area: area2-2;/* Setter grid området for hvor teksten skal plasseres */
+}
+/* hardware side 10 */
+.area10-1 {/* Styling og posisjonering av bilde nummer to */
+    padding-left: 170px;/* Setter avstand fra innhold til border */
+    justify-content: center;/* Setter posisjonen til senter */
+    width: 860px;/* Setter bredden */
+    height: 520px;/* Setter høyden */
+    grid-area: area2-1;/* Setter plassering i griden */
+    border: solid 2px black;/* Setter border rundt containeren */
+    background-image: url(images/kodeprogresjon/hardware-2.PNG);/* legger til bakgrunnsbilde */
+    background-position-y: center;/* Sentrerer bildet */
+    background-size: auto;/* Setter automatisk størrelse etter containeren */
+    -webkit-background-size: cover;/* funksjon for å få "cover" til å fungere i flest mulig nettlesere */
+    -moz-background-size: cover;/* funksjon for å få "cover" til å fungere i flest mulig nettlesere */
+    -o-background-size: cover;/* funksjon for å få "cover" til å fungere i flest mulig nettlesere */
+    background-repeat: no-repeat;/* Setter bakgrunnsbilde til å ikke kopieres inn flere ganger */
+}
+
+.area10-2 {/* Styling og posisjonering av tekst container */
+    line-height: 1.5;/* Linje høyde for å få mellomrom mellom hver linje */
+    display: flex;/* Lager containeren til en flexbox */
+    align-items: center;/* Sentrerer containeren */
+    font-size: 20px;/* Setter skriftstørrelsen */
+    border: solid 1px black;/* Setter en border rundt */
+    box-shadow: 0 0 15px 15px rgba(0, 0, 0, 0.3);/* Skyggelegger rundt containeren */
+    border-radius: 15px;/* Avrunder kantene */
+    justify-content: center;/* Sentrerer containeren horisontalt */
+    background-color: white;/* Setter bakgrunnsfarge til hvit */
+    width: 500px;/* Setter bredden til 500pixler */
+    grid-area: area2-2;/* Setter grid området for hvor teksten skal plasseres */
+}
+.area10-1-1 {/* Styling og posisjonering av bilde nummer to */
+    padding-left: 170px;/* Setter avstand fra innhold til border */
+    justify-content: center;/* Setter posisjonen til senter */
+    width: 860px;/* Setter bredden */
+    height: 520px;/* Setter høyden */
+    grid-area: area2-1;/* Setter plassering i griden */
+    border: solid 2px black;/* Setter border rundt containeren */
+    background-image: url(images/kodeprogresjon/hardware-7.PNG);/* legger til bakgrunnsbilde */
+    background-position-y: center;/* Sentrerer bildet */
+    background-size: auto;/* Setter automatisk størrelse etter containeren */
+    -webkit-background-size: cover;/* funksjon for å få "cover" til å fungere i flest mulig nettlesere */
+    -moz-background-size: cover;/* funksjon for å få "cover" til å fungere i flest mulig nettlesere */
+    -o-background-size: cover;/* funksjon for å få "cover" til å fungere i flest mulig nettlesere */
+    background-repeat: no-repeat;/* Setter bakgrunnsbilde til å ikke kopieres inn flere ganger */
+}
+
+.area10-1-2 {/* Styling og posisjonering av tekst container */
+    line-height: 1.5;/* Linje høyde for å få mellomrom mellom hver linje */
+    display: flex;/* Lager containeren til en flexbox */
+    align-items: center;/* Sentrerer containeren */
+    font-size: 20px;/* Setter skriftstørrelsen */
+    border: solid 1px black;/* Setter en border rundt */
+    box-shadow: 0 0 15px 15px rgba(0, 0, 0, 0.3);/* Skyggelegger rundt containeren */
+    border-radius: 15px;/* Avrunder kantene */
+    justify-content: center;/* Sentrerer containeren horisontalt */
+    background-color: white;/* Setter bakgrunnsfarge til hvit */
+    width: 500px;/* Setter bredden til 500pixler */
+    grid-area: area2-2;/* Setter grid området for hvor teksten skal plasseres */
+}
+/* hardware kode side 11 */
+.area11-1 {/* Styling og posisjonering av bilde nummer to */
+    padding-left: 170px;/* Setter avstand fra innhold til border */
+    justify-content: center;/* Setter posisjonen til senter */
+    width: 860px;/* Setter bredden */
+    height: 520px;/* Setter høyden */
+    grid-area: area2-1;/* Setter plassering i griden */
+    border: solid 2px black;/* Setter border rundt containeren */
+    background-image: url(images/kodeprogresjon/hardware-3.PNG);/* legger til bakgrunnsbilde */
+    background-position-y: center;/* Sentrerer bildet */
+    background-size: auto;/* Setter automatisk størrelse etter containeren */
+    -webkit-background-size: cover;/* funksjon for å få "cover" til å fungere i flest mulig nettlesere */
+    -moz-background-size: cover;/* funksjon for å få "cover" til å fungere i flest mulig nettlesere */
+    -o-background-size: cover;/* funksjon for å få "cover" til å fungere i flest mulig nettlesere */
+    background-repeat: no-repeat;/* Setter bakgrunnsbilde til å ikke kopieres inn flere ganger */
+}
+
+.area11-2 {/* Styling og posisjonering av tekst container */
+    line-height: 1.5;/* Linje høyde for å få mellomrom mellom hver linje */
+    display: flex;/* Lager containeren til en flexbox */
+    align-items: center;/* Sentrerer containeren */
+    font-size: 20px;/* Setter skriftstørrelsen */
+    border: solid 1px black;/* Setter en border rundt */
+    box-shadow: 0 0 15px 15px rgba(0, 0, 0, 0.3);/* Skyggelegger rundt containeren */
+    border-radius: 15px;/* Avrunder kantene */
+    justify-content: center;/* Sentrerer containeren horisontalt */
+    background-color: white;/* Setter bakgrunnsfarge til hvit */
+    width: 500px;/* Setter bredden til 500pixler */
+    grid-area: area2-2;/* Setter grid området for hvor teksten skal plasseres */
+}
+/* hardware kode side 12 */
+.area12-1 {/* Styling og posisjonering av bilde nummer to */
+    padding-left: 170px;/* Setter avstand fra innhold til border */
+    justify-content: center;/* Setter posisjonen til senter */
+    width: 860px;/* Setter bredden */
+    height: 520px;/* Setter høyden */
+    grid-area: area2-1;/* Setter plassering i griden */
+    border: solid 2px black;/* Setter border rundt containeren */
+    background-image: url(images/kodeprogresjon/hardware-4.PNG);/* legger til bakgrunnsbilde */
+    background-position-y: center;/* Sentrerer bildet */
+    background-size: auto;/* Setter automatisk størrelse etter containeren */
+    -webkit-background-size: cover;/* funksjon for å få "cover" til å fungere i flest mulig nettlesere */
+    -moz-background-size: cover;/* funksjon for å få "cover" til å fungere i flest mulig nettlesere */
+    -o-background-size: cover;/* funksjon for å få "cover" til å fungere i flest mulig nettlesere */
+    background-repeat: no-repeat;/* Setter bakgrunnsbilde til å ikke kopieres inn flere ganger */
+}
+
+.area12-2 {/* Styling og posisjonering av tekst container */
+    line-height: 1.5;/* Linje høyde for å få mellomrom mellom hver linje */
+    display: flex;/* Lager containeren til en flexbox */
+    align-items: center;/* Sentrerer containeren */
+    font-size: 20px;/* Setter skriftstørrelsen */
+    border: solid 1px black;/* Setter en border rundt */
+    box-shadow: 0 0 15px 15px rgba(0, 0, 0, 0.3);/* Skyggelegger rundt containeren */
+    border-radius: 15px;/* Avrunder kantene */
+    justify-content: center;/* Sentrerer containeren horisontalt */
+    background-color: white;/* Setter bakgrunnsfarge til hvit */
+    width: 500px;/* Setter bredden til 500pixler */
+    grid-area: area2-2;/* Setter grid området for hvor teksten skal plasseres */
+}
+/* hardware kode side 13 */
+.area13-1 {/* Styling og posisjonering av bilde nummer to */
+    padding-left: 170px;/* Setter avstand fra innhold til border */
+    justify-content: center;/* Setter posisjonen til senter */
+    width: 860px;/* Setter bredden */
+    height: 520px;/* Setter høyden */
+    grid-area: area2-1;/* Setter plassering i griden */
+    border: solid 2px black;/* Setter border rundt containeren */
+    background-image: url(images/kodeprogresjon/hardware-5.PNG);/* legger til bakgrunnsbilde */
+    background-position-y: center;/* Sentrerer bildet */
+    background-size: auto;/* Setter automatisk størrelse etter containeren */
+    -webkit-background-size: cover;/* funksjon for å få "cover" til å fungere i flest mulig nettlesere */
+    -moz-background-size: cover;/* funksjon for å få "cover" til å fungere i flest mulig nettlesere */
+    -o-background-size: cover;/* funksjon for å få "cover" til å fungere i flest mulig nettlesere */
+    background-repeat: no-repeat;/* Setter bakgrunnsbilde til å ikke kopieres inn flere ganger */
+}
+
+.area13-2 {/* Styling og posisjonering av tekst container */
+    line-height: 1.5;/* Linje høyde for å få mellomrom mellom hver linje */
+    display: flex;/* Lager containeren til en flexbox */
+    align-items: center;/* Sentrerer containeren */
+    font-size: 20px;/* Setter skriftstørrelsen */
+    border: solid 1px black;/* Setter en border rundt */
+    box-shadow: 0 0 15px 15px rgba(0, 0, 0, 0.3);/* Skyggelegger rundt containeren */
+    border-radius: 15px;/* Avrunder kantene */
+    justify-content: center;/* Sentrerer containeren horisontalt */
+    background-color: white;/* Setter bakgrunnsfarge til hvit */
+    width: 500px;/* Setter bredden til 500pixler */
+    grid-area: area2-2;/* Setter grid området for hvor teksten skal plasseres */
+}
+/* Avstand mellom divs */
+.avstand-linje {/* styling for linje for avstand */
+    /*                                              Avskille fra side 1 til side 2*/
+    margin: 5% 5% 5% 5%;/* Setter avstand fra linjen til andre områder */
+    background-color: black;/* Setter linjens farge */
+    grid-area: area5;/* Setter området for plassering */
+    min-height: 0.1px;/* Setter linje høyde */
+    max-height: 14px;/* Setter max høyde på linjen (denne kodelinjen er ikke i bruk) */
+}
+
+/*-------------------------------------------------------- Detaljer sluttlinje  */
+.detaljer-container {/* Setter opp container for detaljelinjen */
+    display: grid;/* Setter detalje-linjen som en grid type for å enkelt kunne plassere områdene i griden */
+    min-height: 70px;/* Setter opp minimumshøyde på containeren */
+    background-color: rgb(114, 144, 144);/* Setter bakgrunnsfarge på containeren */
+    grid-template-areas:/* Setter bakgrunnsfarge på containeren */
+        "d-1 d-2 d-3 d-4"/* Setter opp områdene for griden */
+        "d-1 d-2 d-3 d-4"/* Setter opp områdene for griden */
+        "d-1 d-2 d-3 d-4"/* Setter opp områdene for griden */
+        "d-1 d-2 d-3 d-4"/* Setter opp områdene for griden */
+    ;
+}
+
+.d-1 {/* Setter opp området for første sted hvor kontaktinformasjon setter */
+    display: flex;/* Setter containeren opp som en flexbox */
+    grid-area: d-1;/* Setter området på containeren */
+    align-items: end;/* Setter posisjonen til innholdet vetikalt til å være på enden */
+    justify-content: start;/* Setter posisjonen på innholdet til å være på starten horisontalt */
+}
+
+.d-2 {/* Setter opp tomt området for å fylle mellomrommet imellom d1 og d4. Dette kunne også skreves som "." i main containeren.*/
+    grid-area: d-2;/*  Setter området på d-2*/
+}
+
+.d-3 {/* Setter opp tomt området for å fylle mellomrommet imellom d1 og d4. Dette kunne også skreves som "." i main containeren.*/
+    grid-area: d-3;/*  Setter området på d-2*/
+}
+
+.d-4 {/* Setter opp området for navn som har laget nettsiden */
+    margin-right: 15px;/* Setter på en margin på 15 pixler på høre side av containeren */
+    display: flex;/* Setter containern som en flexbox for enklere posisjonering */
+    grid-area: d-4;/* Setter posisjonering i forhold til detaljecontaineren */
+    align-items: end;/* Setter posisjoneringen til slutten av containeren */
+    justify-content: end;/* Setter posisjoneringen til slutten av containernen */
+}

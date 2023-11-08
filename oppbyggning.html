@@ -1,0 +1,132 @@
+<!DOCTYPE html><!-- Setter dokumenttype til å være skrevet i html -->
+<html lang="no"><!-- Setter språk på hva nettleseren leser skriftinnholdet på siden som. no vil da representere "norwegian" -->
+
+<head><!-- head er en del av den nødvendige strukturen for enhver nettside -->
+    <meta charset="UTF-8"><!-- setter tegnsettet til å være utf-8 som blir standard for norsk tegnsetting -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"><!-- Denne linjen forteller nettleseren at nettsiden skal være kompatibel med nyeste versjonen av internet explorer -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"><!-- detter angir bredden på visningen og skalerer visningen til størrelsen på enheten som skal åpne nettsiden-->
+    <title>Arbeidsprosess</title><!--Dette angir tittelen på nettsiden, altså navnet som vises på fanen -->
+    <link rel="stylesheet" href="style-oppbyggning.css"><!-- Dette linker html filen til css filen for styling -->
+</head>
+
+<body>
+    <div class="area1"><!-- Setter opp container for overskrift -->
+        <h1>Arbeidsprosess</h1><!--   Lager overskrift  -->
+    </div>
+    <div class="bryterpanel"><!--  Sette opp container for å inneholde knappene til bryterpanelet   -->
+        <a href="index.html"><span class="button1">Hjem</span></a><!--  link definert som knapp med link til hver enkelt side på nettsiden  -->
+        <a href="maleinstrument.html"><span class="button1">Måleinstrument</span></a><!-- Lager knapp med link til side for måleinstrument -->
+        <a href="Kretser.html"><span class="button1">Kretsskjemaer</span></a><!-- Lager knapp med link til side for kretskjemaer -->
+        <a href="komponenter-2.html"><span class="button1">Komponenter</span></a><!-- Lager knapp med link til side for komponenter -->
+        <a href="oppsett.html"><span class="button1">Programmering</span></a><!-- Lager knapp med link til side for programmering -->
+        <a href="oppbyggning.html"><span class="button1">Arbeidsprosess</span></a><!-- Lager knapp med link til side for arbeidsprosess -->
+    </div>
+    
+    <div class="heading"></div><!-- Setter opp heading for siden -->
+    <div class="banner-bakgrunn"><!--  lager området hvor bakgrunn kan plasseres for å lage et bilde på toppen av siden   -->
+        <div class="banner1"><!--   lager innholdscontainer for banneren slik at innhold kan styles seperat fra containeren  -->
+            <div class="banner-tekst">Oppbyggningsprossesen startet med at gruppen samlet seg for å tydelig gå gjennom oppgaveteksten. Vi ble enige om en framgangsmåte, fordelte arbeidsoppgaver og begynte å arbeide med å sette opp flytskjema for hva som måtte gjennomføres først. <br> <br>Det vil her bli gått gjennom hvilke metoder gruppen har brukt på å bygge produktet, hvilken roller hvert medlem har blitt tildelt og hvordan prossessen av oppbyggningen av produktet ble gjennomført.</div><!--   Setter opp tekst i banneren  -->
+            <div id="box"></div>
+        </div>
+    </div>
+    <!-- side 1 -->
+        <div class="area5"></div><!-- Lager en linje for avstand mellom sidene, stylet til en linje i stylesheet -->
+    <div class="side2-container"><!--  Setter opp container for side 2 -->
+        <div class="tekst-side2">Konstruksjonen, planleggingen og generelt arbeidet ble gjort samlet som en gruppe og avgjørelser som hadde noe direkte innvirkning på besvarelsen av arbeidsoppdraget ble tatt i felleskapet. Selv om arbeidet ble sammarbeidet på, utdeltes det seg ansvarsområder for hva hver enkelt av oss skulle ha ansvar for.</div><!--   Setter opp tekst for side 2 -->
+        <div class="bilde-side2"><img src="images/gruppebilder/structure-plan.png" id="bilde1-side2"></div><!--   legger til bilde på side 2  -->
+    </div>
+    <!-- sider 2-->
+        <div class="area5"></div><!-- Lager en linje for avstand mellom sidene, stylet til en linje i stylesheet -->
+    <div class="container1"><!--   Lager container for innholdet til gruppemedlemmer  -->
+        <div class="container2">
+                            <img src="images/gruppebilder/Tarje.PNG" id="bilde-profil">
+                            <p id="ov1">Tarje - <em>Ansvar for oppsett av kode</em></p><!-- Setter opp overskrift med kursiv skrift type -->
+                            <p class="tekst-1">Tarje har hatt ansvar for sammensettningen av de forskjellige kodene i arduino-IDE. I tillegg har han hatt ansvar for koding av nettsiden i HTML/CSS og har stått for designet på nettsiden.</p><!-- Lager paragraf med innhold om "tarje" profil -->
+        </div>
+            <div class="container3"><!-- Setter opp container for "andreas" området -->
+                <img src="images/gruppebilder/Andreas.PNG" id="bilde-5"><!-- Setter inn bilde for "andreas" -->
+                <p id="ov2"><br> <br>Andreas - <em>Ansvar for mattematisk grunnlag, opprettelse av kretsskjemaer og Lodding av kretsene  </em></p><!-- Setter opp overskrift med kursiv skrift type -->
+                <p class="tekst-2">Andreas har hatt ansvar for det mattematiske grunnlaget bak hvordan hver enkelt krets skal kobles opp. Andreas har også tatt på seg rollen for å tegne opp kretsskjemaen og loddingen av alle komponentene til det ferdige produktet.</p><!-- Setter opp paragraf for området for "andreas" -->
+            </div>
+                        <div class="container4"><!-- Setter opp container for område for tobias -->
+                            <img src="images/gruppebilder/tobias.PNG" id="bilde-profil3"><!-- Setter inn bilde for "tobias" -->
+                            <p id="ov3">Tobias - <em>Ansvar for innhenting av informasjon og 3D-printing</em></p><!--Setter inn overskrift med kursiv skrift type  -->
+                            <p class="tekst-3">Tobias har hatt ansvar for innhenting av innformasjon om hvordan hver krets skal kobles og kodes. Han har tatt på seg jobben om 3d-printing og gjort det nødvendige av arbeid i fusion-360.</p><!-- Setter opp innholdet i et paragraft -->
+                        </div>
+    </div>
+    <!-- Side 3------------------------------------------------------------ -->
+    <div class="area5"></div><!-- Lager en linje for avstand mellom sidene, stylet til en linje i stylesheet -->
+        <h2 id="overskrift-arbeid">Arbeidsprosess</h2><!-- Overskrift på arbeidsprosess -->
+        <div class="side3-container"><!--  Setter opp container for side 2 -->
+            <div class="tekst-side3">Vi begynte arbeidet av måleapperatet med å sette opp en plan på hva som var sluttmålet, hva som kunne måles og hvordan vi skulle arbeide framover. <br> <br> Deretter satte vi sammen informasjon som vi innhentet fra nettet om hvordan enkelte av målingene kunne gjøres. <br> <br> Vi satte opp kretsene og teste dem en og en og lagde koden til hver enkelt. <br> <br> Når alle målingene var testet seperat begynte vi med å sette opp en kode som kunne ta alle målingene sammen. <br> <br> Vi satte opp kretsene sammen og gjorde endringer på hvor vi måtte styre spenningen til å gå for ikke å påvirke måleresultatene. <br> <br> Deretter printet vi ut en casing, satte opp nettsiden, knipset en haug med bilder og sendte det inn til Doughboy.
+            </div><!--   Setter opp tekst for side 2 -->
+            <div class="bilde-side3"><img src="images/gruppebilder/arbeid5.PNG" id="bilde1-side3"></div>
+            <!--   legger til bilde på side 2  -->
+        </div>
+            <div class="area5"></div><!-- Lager en linje for avstand mellom sidene, stylet til en linje i stylesheet -->
+    <!-- Side 4 -------------------------------------------------------------->
+
+    <div class="container-2"><!-- Lager main-container for hovedinnhold -->
+        <div class="hovedinnhold"><!--  Setter opp området for hovedinnhold   -->
+            <div class="area2-container"><!-- Setter opp området for innhold som kan styles seperat fra parent elementer -->
+                <!--  Setter container på insiden av hovedinnholdet for å kunne style det seperat fra hovedinnholdet   -->
+                <br>
+                <img src="images/gruppebilder/drikking-1.PNG"
+                    id="bilde-4"><!--    Setter inn bilde med egen id for å kunne style det seperat fra containerene -->
+                <p id="ov4" ></p>
+                <!-- prelaget javascript fade effekt på overskrifter    -->
+                <p class="tekst-4">Gruppen arbeidet for det meste i felleskap på teams eller hjemme hos en av medlemmene. Her utviklet det seg ofte problemer enten i koden eller på oppkoblingen av kretsene.</p><!-- Setter opp paragraf for skriftinnhold -->
+    
+                <img src="images/gruppebilder/drikking-2.PNG" id="bilde-4-2"><!-- Setter inn bilde  -->
+    
+                <p1 class="tekst-4-2"><!-- Lager paragraf med overskrift og innhold -->
+                    <p id="ov4-2"></p>Denne prossesen inneholdt ofte mye drikke, god stemning og utvikling av flere problemstillinger.</p>
+    
+                    <img src="images/gruppebilder/drikking-3.PNG" id="bilde-6"><!-- Setter inn bilde -->
+                    <p class="tekst-6"><!-- Lager paragraf med overskrift og innhold -->
+                    <p id="ov6" ></p>Problemene ble som oftest løst med å skylde på den ene personen som jobbet, til denne personen løste opp i problemene.</p>
+
+            </div>
+        </div>
+    </div>
+    <div class="area5"></div><!-- Lager en linje for avstand mellom sidene, stylet til en linje i stylesheet -->
+<!-- -------------------------------------------------------------------------- -->
+<!-- Avsluttende 4bilder -->
+<h2 id="overskrift-arbeid">Problemstillinger</h2>
+        <div class="container-4-bilder"><!-- Lager container for bildeseksjonene -->
+            <div class="seksjon1"><!-- Setter opp første seksjon for første bilde med tekst -->
+                <div class="bildeseksjon"><img src="images/gruppebilder/problem-1.PNG" alt="" id="bilde1"></div><!-- Setter inn bildet -->
+                <div class="tekst1"><!-- Setter inn tekst -->
+                    <p>Her vises en av to potensiometere som ble ødelagt. Dette skapte stort hodebry og timevis med feilsøking. Feilen lå i at varmen fra loddebolten hadde ødelagt noe av innmaten.</p>
+                </div>
+            </div>
+            <div class="seksjon1"><!-- Setter inn andre seksjon for andre bilde med tekst -->
+                <div class="bildeseksjon"><img src="images/gruppebilder/problem-2.PNG" alt="" id="bilde1"></div><!-- Setter inn bildet -->
+                <div class="tekst1"><!--Setter inn tekst  -->
+                    <p>Bilde viser en oled-skjerm som skapte mer hodebry for gruppen. Problemet her var at resistansen i koblingene på kjeksbrettet hadde for høyt spenningtap fram til oled-skjermen slik at den ikke fikk tilført nok spenning.</p>
+                </div>
+            </div>
+            <div class="seksjon1"><!-- Setter inn tredje seksjon for bilde med tekst -->
+                <div class="bildeseksjon"><img src="images/gruppebilder/problem-3.PNG" alt="" id="bilde1"></div><!-- Setter inn bildet -->
+                <div class="tekst1"><!-- Setter inn tekst -->
+                    <p>Her er andre forsøk av to feilede på å printe tillegsutstyret til måleapperatet. Her var det en indre feil i 3d-printeren og vi måtte gå dypt inn i elektronikken på 3d-printeren for å fikse problemet.</p>
+                </div>
+            </div>
+        </div>
+        <!-- ------------------------------------------------------------ -->
+        <!-- Avsluttende slagord -->
+        <div class="slagord">
+            <h2><em>Alle målinger finnes i bunnen av flasken</em></h2><!-- Legger til skrift med kursiv format -->
+        </div>
+            <div class="area5"></div><!-- Lager en linje for avstand mellom sidene, stylet til en linje i stylesheet -->
+        </body>
+        <!-- -->
+        <!------------------------------------------------------Underdetaljer---------------------------------------------------------->
+   
+    <div class="detaljer-container"><!--   Lager container for avsluttende kontaktinformasjonsområde  -->
+        <div class="d-1">Telefon nr: 12345678<br>Adresse: Norge <br> Email: Studenter@email.no</div>
+        <div class="d-2"></div><!--  ikke nødvendige linjer, men brukt for å ta opp plass på sluttlinjen. (kunne brukt "." på stylingsområdet istede)  -->
+        <div class="d-3"></div><!--  ikke nødvendige linjer, men brukt for å ta opp plass på sluttlinjen. (kunne brukt "." på stylingsområdet istede)  -->
+        <div class="d-4">Nettside produsert av: <br> Tarje, Andreas, Tobias</div>
+    </div>
+</html>

@@ -1,0 +1,45 @@
+<!DOCTYPE html><!-- Setter dokumenttype til å være skrevet i html -->
+<html lang="no"><!-- Setter språket som blir brukt på nettsiden til "no" for norsk    -->
+
+<head>
+    <script language="JavaScript">
+        var password;
+        var pass = "doughboi";
+
+        EnterPassword();
+        function EnterPassword()
+        {
+            password = prompt ('Passordet blir ikke skjult!');
+        if (password == pass){
+            alert('password correct!');
+        }else{
+            alert('Feil passord, prøv på nytt!');
+            EnterPassword();
+        }
+        }
+
+        </script>
+    <meta charset="UTF-8"><!-- setter tegnsettet til å være utf-8 som blir standard for norsk tegnsetting -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"><!-- Denne linjen forteller nettleseren at nettsiden skal være kompatibel med nyeste versjonen av internet explorer -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"><!--  Setter viewporten til å dekke området fra hvilke maskin som åpner nettsiden   -->
+    <title>Hjem</title><!--Dette angir tittelen på nettsiden, altså navnet som vises på fanen -->
+    <link rel="stylesheet" href="stlye.2.0-index.css"> <!--  Setter link til stylingen på nettsiden til css filen som er opprettet   -->
+</head>
+
+<body>
+    
+    <div class="container"> <!--  lager en div container for å inneholde plasseringene til de forskjellige områdene   -->
+        <div class="area1"><h1>Arbeidsoppdrag 1</h1></div><!--  Setter opp overskrift på forsiden   -->
+            <div class="area-buttons"><!--                                   Setter opp knapper til de forskjellige sidene på nettsiden  -->
+                    <div class="area3"><button id="button1"> <a href="Kretser.html">Kretsskjemaer</a></button></div><!-- Setter opp første knapp som er linket til kretskjemaer -->
+                    <div class="area4"><button id="button2"><a href="komponenter-2.html">Komponenter</a></button></div><!-- Setter opp andre knapp som er linket til komponenter -->
+                    <div class="button-main" button id="button5"> <a href="maleinstrument.html"> Måleinstrument</a></button></div><!-- Setter opp tredje knapp som er linket til måleinstrument siden -->
+                    <div class="area5"><button id="button3"><a href="oppsett.html"> Programmering</a></button></div><!-- Setter opp fjerde knapp linket opp til programmeringssiden  -->
+                    <div class="area6"><button id="button4"><a href="oppbyggning.html">Arbeidsprosess</a></button></div><!-- Setter opp femte knapp linket til arbeidsprosess siden -->
+            </div>
+    </div>
+    <div class="innledning"><p id="tekstinnhold">Nettsiden består av innhold som viser besvarelsen på et arbeidsoppdrag i måleteknikk. Det viser framgangsmåte, komponenter, kretskjemaer og oppbygning av et måleapperat som kan brukes til diverse målinger.</p></div><!-- Innhold av innledende tekst -->
+    </body>
+
+
+</html>

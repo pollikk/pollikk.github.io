@@ -1,0 +1,109 @@
+/*                                                  Setter margin og padding til 0 som standard for hele nettsiden */
+* {
+    margin: 0;/* Setter margin til 0 for siden */
+    padding: 0;/* Setter paddingen til 0 for siden */
+}
+/*                                          Setter bakgrunnsbilde på forside */
+body{
+        background: url(images/Multimeter/multimeter-ferdig.PNG) no-repeat center center fixed;/* Setter på bakgrunnsbilde for body'en med fixed posisjonering i center og setter på spesifikasjonen om at bilde ikke skal kopieres flere ganger når bakgrunnen er fyllt opp */
+        background-size: auto;/* Setter størrelsen på bilde til atuomatisk */
+        -webkit-background-size: cover; /*                      legger til webkit, moz, o for å dekke 
+                                                                forskjellige nettleser slik at "cover" funksjonen skal fungere på forskjellige nettlesere*/
+        -moz-background-size: cover; /* funksjon for å få "cover" til å fungere i flest mulig nettlesere */
+        -o-background-size: cover;/* funksjon for å få "cover" til å fungere i flest mulig nettlesere */
+    background-repeat: no-repeat;/* funksjon for å få "cover" til å fungere i flest mulig nettlesere */
+}
+
+a {
+    color: inherit;  /* Setter fargen til å bli den samme som det "parent" diven har som farge */
+    font-style: inherit;  /* Setter stylingen på teksten til det samme som "parent" diven har */
+    font-family: inherit;  /* Setter tekst typen til å være det samme som parenten har  */
+    text-decoration: none;/* Setter text dekorasjonen til none for å få vekk dekorasjon som kommer med som standard når man lager en liste */
+}
+/*                                              Container for å dele ut plasseringer for websiden */
+.container {/* Setter opp en hovedcontainer for plassering av innhold */
+    display: grid;/* Setter contianeren til å være en grid  */
+    grid-template-areas:/* Setter opp plasseringene i griden */
+        "tilbakeKnapp tilbakeKnapp tilbakeKnapp tilbakeKnapp tilbakeKnapp tilbakeKnapp"        /* Setter opp plasseringen i griden */
+        "area1 area1 area1 area1 area1 area1"/* Setter opp plasseringen i griden */
+        "area-buttons area-buttons area-buttons area-buttons area-buttons area-buttons "/* Setter opp plasseringen i griden */
+        "slide-contain slide-contain slide-contain slide-contain slide-contain slide-contain"/* Setter opp plasseringen i griden */
+
+    ;
+}
+
+.area-buttons{/*                                posisjonering for område for knapper*/
+    margin: 15px 0 0 0;/* Setter på margin på top siden av containeren */
+grid-area: area-buttons;/* Setter posisjonen på containeren i forhold til hovedcontaineren */
+display: flex;/* Setter contianeren til å være en flexbox for enklere posisjonering */
+flex-wrap: wrap;/* Setter en flex wrap funksjon slik at innholdet i containeren ikke skal gå utenfor men heller hoppe ned til neste linje når bredden er oversteget */
+flex-direction: row;/* Setter flex retning til row for å få innholdet til å plassere seg i en rekke framfor columns */
+  align-items: center;/* posisjonere containeren vertikalt i senter */
+    justify-content: center;/* posisjonerer containeren horisontalt i senter */
+}
+#button5{/* Setter styling på knappen for måleinstrument seperat fra de andre knappene ettersom denne skal være større og med andre spesifikasjoner */
+        display: flex;/* Lager bryteren som en flexbox for enklere posisjonering av skriften i knappen */
+        margin-left: 25px;/* Setter margin på venstre side av knappen */
+        margin-right: 35px;/* Setter margin på høyre side av knappen */
+        padding: 5px;/* Setter avstand fra skriften til borderen rundt knappen */
+        width: 210px;/* Setter bredden på knappen */
+        justify-content: center;/* Setter horisontal plassering av skriften i knappen */
+        border: solid 2px transparent;/* Setter på en usynlig border rundt knappen */
+        border-radius: 9px;/* Setter border radiusen til 9pixler for å avrunde kanter */
+        background-color: black;/* Setter bakgrunnsfarge til svart */
+        color: white;/* Setter skrift farge på hvit */
+        border: solid 2px green;/* Setter på en border fargen til grønn  */
+        cursor: pointer;/* Setter på cursor effekt slik at musen reagerer når den hovrer knappen */
+        font-size: 30px;/* Setter størrelse på teksten */
+        transition: 1s;/* Setter tid på hvor lang tid hover effekt skal ta å fullføre */
+}
+
+#button1,#button2,#button3,#button4 { /*størrelse og posisjonering på alle knapper*/
+    display: flex;/* Setter opp knappene som flexboxer */
+    margin-left: 25px;/* Setter margin på venstre side av knappene */
+    margin-right: 35px;/* Setter margin pøå høyre side av knappene */
+    padding: 5px;/* Setter avstand fra skrift til border  */
+    width: 150px;/* Setter bredden på knappene */
+    justify-content: center;/* Sentrerer skriften i knappene */
+    border: solid 2px transparent;/* Setter på usynlig border rundt */
+    border-radius: 9px;/* avrunder kantene */
+    background-color: black;/* Setter bakgrunnsfargen til svart */
+    color: white;/* Setter skrift farge til hvit */
+    cursor: pointer;/* Setter på cursor effekt slik at musen reagerer når den hovrer knappen */
+    font-size: 20px;/* Setter størrelse på teksten */
+    transition: 1s;/* Setter tid på hvor lang tid hover effekt skal ta å fullføre */
+}
+#button1:hover,#button2:hover,#button3:hover,#button4:hover,#button5:hover { /*hover effekt på alle knapper*/
+        transform: scale(1.4);/* Skalerer knappene opp til 40% større enn standarstørrelse når knappene hovres*/
+        border: solid 2px darkblue;/* Setter en border på knappene når de hovres med blå farge */
+        background-color: white;/* Endrer bakgrunnsfargen til hvit når knappene hovres */
+        color: black;/* Setter svart skriftfarge når knappene hovres */
+}
+.area1 {/* Styling og posisjonering av overskrift container */
+        margin: 10px 50px 0 50px;/* Setter margin på top, høyre og venstre side */
+        min-width: 250px;/* Setter minimums bredde på overskrift container */
+        height: 65px;/* Setter høyde på containeren */
+        display: flex;/* lager containeren som en flexbox for enklere posisjonering */
+        background-color: darkslategray;/* Setter bakgrunnsfargen  */
+        grid-area: area1;/* Setter posisjonering på overskrift containerern */
+        font-size: 30px;/* Setter størrelse på skriften */
+        align-items: center;/* Setter posisjonering på containeren vertikalt */
+        justify-content: center;/* Setter posisjonering på containeren horisontalt */
+        border: solid 2px black;/* Setter en svart border rundt containeren */
+        box-shadow: 0px 10px 5px 5px rgba(0, 0, 0, 0.5);/* Skyggelegger containeren */
+}
+
+.innledning{/* containeren for innledende tekst */   
+    position: absolute;/* Setter posisjoneringen på containeren til å gå ut av normal flow på en html oppbygning */
+    bottom: 0px;/* Setter bottom til 0 for å flytte containeren til bunnen av siden */
+    width: 100%;/* Setter bredden til 100% for å dekke hele siden i bredde */
+    justify-content: start;/* Sentrerer innholdet til senter horisontalt */
+    align-items: end;/* Setter innholdet til å flyttes til enden av containeren vertikalt */
+    display: flex;/* Setter containeren som en flexbox for å kunne enkelt posisjonere innhold */
+    color: white;/* Setter skrift farge til hvit */
+}
+#tekstinnhold{/* Styling av tekstinnhold */
+    width: 600px;/* Setter bredde på hvor langt teksten skal strekkes */
+    margin-bottom: 40px;/* Setter avstand fra bunnen av siden */
+    font-size: 20px;/* Setter størrelse på teksten */
+}
